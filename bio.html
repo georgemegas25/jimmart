@@ -3,6 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <title>Bio</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -19,12 +23,30 @@
   </div>
 </nav>
 
+<!-- PARALLAX HERO SECTION -->
+<section class="section parallax" style="background-image: url('images/bg.jpg'); height: 100vh; display:flex; align-items:center; justify-content:center; text-align:center;">
+  <h2 class="reveal" style="font-size:60px;">Βιογραφικό</h2>
+</section>
+
+<!-- BIO CONTENT -->
 <section class="section">
-  <h2>Βιογραφικό</h2>
-  <p style="text-align:center;">
-    Λίγα λόγια για τον καλλιτέχνη...
+  <p class="reveal" style="max-width:800px; margin:auto; text-align:center;">
+    Λίγα λόγια για τον καλλιτέχνη. Εδώ μπορείς να γράψεις την ιστορία του,
+    την πορεία του, τις εκθέσεις του, τη φιλοσοφία του και οτιδήποτε τον εκφράζει.
   </p>
 </section>
 
+<footer>
+  © 2026 MyPortfolio
+</footer>
+
+<div class="cursor"></div>
+<div class="lightbox" id="lightbox">
+  <img src="" id="lightbox-img">
+</div>
+
+<script src="script.js"></script>
+
 </body>
 </html>
+
