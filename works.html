@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <title>Έργα</title>
-  
+
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
@@ -11,7 +12,7 @@
 <body>
 
 <nav class="navbar">
-  <div class="nav-container">
+  <div class="nav-container"> 
     <div class="logo">MyPortfolio</div>
     <div class="nav-links">
       <a href="index.html">Home</a>
@@ -23,15 +24,39 @@
 </nav>
 
 <section class="section">
-  <h2>Έργα</h2>
+  <h2 class="reveal">Έργα</h2>
+
   <div class="projects">
+
     <div class="card">
-      <img src="images/project1.jpg">
+      <img src="images/project1.jpg" class="gallery-img">
       <h3>Project 1</h3>
       <p>Περιγραφή έργου</p>
     </div>
+
+    <div class="card">
+      <img src="images/project2.jpg" class="gallery-img">
+      <h3>Project 2</h3>
+      <p>Περιγραφή έργου</p>
+    </div>
+
   </div>
 </section>
+
+<footer>
+  © 2026 MyPortfolio
+</footer>
+
+<!-- CUSTOM CURSOR -->
+<div class="cursor"></div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <img src="" id="lightbox-img">
+</div>
+
+<!-- SCRIPT -->
+<script src="script.js"></script>
 
 </body>
 </html>
