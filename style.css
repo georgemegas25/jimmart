@@ -7,8 +7,8 @@
 
 body {
   font-family: 'Segoe UI', sans-serif;
-  line-height: 3.7;
-  background: #1F51FF;
+  line-height: 1.6;
+  background: #00A2FF;
   color: #333;
 }
 
@@ -17,7 +17,7 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgb(31, 81, 255);
+  background: rgb(0, 162, 255);
   padding: 15px 0;
   z-index: 1000;
 }
