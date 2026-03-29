@@ -17,7 +17,8 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgb(0, 229, 255);
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(10px);
   padding: 15px 0;
   z-index: 1000;
 }
@@ -45,17 +46,6 @@ body {
 
 .nav-links a:hover {
   color: #ffd700;
-}
-
-/* HERO (Home διαφορετικό) */
-.hero {
-  height: 100vh;
-  background: url("images/hero.jpg") center/cover no-repeat;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: white;
 }
 
 .hero h1 {
@@ -95,7 +85,7 @@ body {
   margin-top: 40px;
 }
 
-.projects div {
+.projects > div {
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -186,7 +176,7 @@ h1, h2, h3 {
 /* ===== CUSTOM CURSOR ===== */
 
 body {
-  cursor: none;
+
 }
 
 .cursor {
