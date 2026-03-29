@@ -17,8 +17,7 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgba(0,0,0,0.6);
-  backdrop-filter: blur(10px);
+  background: linear-gradient(135deg, #00E5FF, #0099cc, #003344);
   padding: 15px 0;
   z-index: 1000;
 }
