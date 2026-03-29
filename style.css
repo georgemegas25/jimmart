@@ -44,10 +44,6 @@ body {
   transition: 0.3s;
 }
 
-.nav-links a:hover {
-  color: #ffd700;
-}
-
 .hero h1 {
   font-size: 50px;
   margin-bottom: 10px;
@@ -77,12 +73,11 @@ body {
   margin-bottom: 100px;
 }
 
-.projects {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 100px;
-  align-items: center;
-  margin-top: 40px;
+@media (max-width: 768px) {
+  .projects {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
 }
 
 .projects > div {
@@ -145,13 +140,16 @@ h1, h2, h3 {
 }
 
 .hero-content {
+  position: relative;
+  z-index: 2;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  color: white;
+  text-align: center;
 }
-
 /* ===== PARALLAX ===== */
 
 .parallax {
@@ -174,11 +172,6 @@ h1, h2, h3 {
 }
 
 /* ===== CUSTOM CURSOR ===== */
-
-body {
-
-}
-
 .cursor {
   width: 20px;
   height: 20px;
@@ -224,14 +217,6 @@ body {
   pointer-events: none; /* να μην μπλοκάρει clicks */
 }
 
-.hero-content {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  color: white;
-  top: 50%;
-  transform: translateY(-50%);
-}
 /* ===== NAV LINKS STRUCTURE ===== */
 
 .nav-links {
