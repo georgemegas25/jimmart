@@ -8,7 +8,7 @@
 body {
   font-family: 'Inter', sans-serif;
   line-height: 1.6;
-  background: black;
+  background: linear-gradient(135deg, #00E5FF, #0099cc, #003344);
   color: #e6faff;
 }
 
@@ -17,7 +17,7 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
-  background: black;
+  background: linear-gradient(135deg, #00E5FF, #0099cc, #003344);
   padding: 15px 0;
   z-index: 1000;
 }
