@@ -85,10 +85,11 @@ body {
   }
 }
 
-.projects > div {
+.projects {
   display: flex;
-  flex-direction: column;
-  gap: 15px;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
 }
 
 .projects img {
@@ -109,6 +110,9 @@ body {
 
 .projects p {
   opacity: 0.8;
+}
+.card {
+  width: 50%;
 }
 /* Footer */
 footer {
