@@ -89,7 +89,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 80px;
+  gap: 50px;
 }
 
 .projects img {
