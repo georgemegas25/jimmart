@@ -131,34 +131,6 @@ h1, h2, h3 {
   font-family: 'Playfair Display', serif;
 }
 
-/* ===== HERO VIDEO ===== */
-
-.hero {
-  position: relative;
-  height: 100vh;
-  overflow: hidden;
-}
-
-.hero-video {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1;
-  filter: brightness(0.6);
-}
-
-.hero-content {
-  position: relative;
-  z-index: 2;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  text-align: center;
-}
 /* ===== PARALLAX ===== */
 
 .parallax {
