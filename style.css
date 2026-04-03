@@ -88,12 +88,12 @@ body {
 }
 
 .projects {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 60px;
-
-  max-width: 1200px;
-  margin: 40px auto;
+  display: grid; /* grid για να έχεις ευκολία στη διάταξη */
+  grid-template-columns: repeat(3, 1fr); /* 3 project ανά σειρά */
+  gap: 60px; /* απόσταση ανάμεσα στα project */
+  max-width: 1200px; /* περιορίζει το πλάτος του grid */
+  margin: 0 auto; /* κεντράρει το grid στο section */
+  padding: 20px 0; /* λίγη απόσταση πάνω/κάτω */
 }
 
 .projects img {
@@ -115,8 +115,14 @@ body {
 .projects p {
   opacity: 0.8;
 }
+
 .card {
-  width: 100%;
+  border-radius: 15px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* κεντράρει το περιεχόμενο */
+  justify-content: flex-start;
 }
 
 .card img {
