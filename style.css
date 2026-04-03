@@ -63,7 +63,7 @@ body {
 }
 
 .section + .section {
-  margin-top: 300px;
+  margin-top: 600px;
 }
 
 .section h2 {
@@ -89,7 +89,7 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   margin-top: 40px;
-  gap: 50px;
+  gap: 1000px;
 }
 
 .projects img {
