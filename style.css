@@ -63,7 +63,7 @@ body {
 }
 
 .section + .section {
-  margin-top: 150px;
+  margin-top: 300px;
 }
 
 .section h2 {
@@ -86,16 +86,16 @@ body {
 }
 
 .projects {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 40px;
   gap: 50px;
 }
 
 .projects img {
   width: 100%;
   max-width: 500px;
-  border-radius: 8px;
+  border-radius: 10px;
   transition: 0.4s ease;
 }
 
