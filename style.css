@@ -261,7 +261,7 @@ h1, h2, h3 {
 
 .reveal {
   opacity: 0;
-  transform: translateY(40px);
+  transform: translateY(100px);
   transition: all 1s ease;
 }
 
