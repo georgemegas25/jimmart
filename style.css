@@ -53,31 +53,132 @@ body {
 }
 
 /* Sections */
+/* SECTIONS — brushstroke design */
 .section {
-  min-height: 100vh;
-  padding: 120px 8%;
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  min-height: 320px;
+  margin-top: 85px;
+  padding: 45px 5%;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-
-  background: linear-gradient(135deg, #00E5FF, #0099cc, #003344);
-  border-radius: 20px;
-}
-.section + .section {
-  margin-top: 600px;
+  justify-content: center;
+  background: transparent;
+  border-radius: 0;
 }
 
+/* Η πινελιά πίσω από το περιεχόμενο */
+.section::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background:
+    repeating-linear-gradient(
+      176deg,
+      transparent 0px,
+      rgba(0, 35, 55, 0.15) 3px,
+      transparent 6px
+    ),
+    linear-gradient(110deg, #00d9f5, #007fa8 55%, #00bcd4);
+
+  clip-path: polygon(
+    0% 16%, 4% 12%, 9% 14%, 15% 9%,
+    24% 12%, 33% 8%, 43% 12%, 54% 9%,
+    65% 12%, 75% 8%, 85% 13%, 94% 9%,
+    100% 16%, 98% 29%, 100% 37%,
+    97% 51%, 100% 63%, 96% 75%,
+    99% 86%, 92% 89%, 82% 86%,
+    71% 91%, 60% 87%, 48% 92%,
+    37% 87%, 26% 91%, 16% 86%,
+    7% 90%, 1% 82%, 3% 69%,
+    0% 58%, 2% 43%, 0% 30%
+  );
+}
+
+/* Κενό πάνω από την πρώτη πινελιά */
 .section:first-of-type {
-  margin-top: 100vh;
+  margin-top: 110px;
+}
+
+/* Τίτλος και κείμενο στο κέντρο */
+.section-content {
+  position: relative;
+  z-index: 2;
+  width: 40%;
+  text-align: center;
 }
 
 .section h2 {
-  text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 12px;
   font-size: 36px;
   letter-spacing: 3px;
-  color: #ffffff;
+  color: #fff;
+}
+
+.section-content p {
+  margin-bottom: 15px;
+}
+
+/* Εικόνες αριστερά και δεξιά */
+.section-art {
+  position: absolute;
+  top: 50%;
+  width: 22%;
+  max-width: 260px;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.section-art.left {
+  left: 7%;
+}
+
+.section-art.right {
+  right: 7%;
+}
+
+.section-art img {
+  display: block;
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 4px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* Κινητά και μικρές οθόνες */
+@media (max-width: 700px) {
+  .section {
+    min-height: 440px;
+    margin-top: 55px;
+    padding: 30px 5%;
+  }
+
+  .section-content {
+    width: 65%;
+  }
+
+  .section h2 {
+    font-size: 25px;
+  }
+
+  .section-art {
+    width: 25%;
+  }
+
+  .section-art.left {
+    left: 2%;
+  }
+
+  .section-art.right {
+    right: 2%;
+  }
+
+  .section-art img {
+    height: 100px;
+  }
 }
 
 @media (max-width: 900px) {
