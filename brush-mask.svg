@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 1600 400"
+     preserveAspectRatio="none">
+
+  <defs>
+    <mask id="brush">
+      <rect width="1600" height="400" fill="black"/>
+
+      <!-- Main thick paint stroke -->
+      <path fill="white" d="
+        M0 65
+        C35 48 80 55 125 63
+        C180 73 220 60 275 70
+        C345 83 395 62 465 76
+        C540 88 600 68 670 80
+        C750 93 805 74 880 86
+        C960 97 1020 80 1090 93
+        C1170 105 1230 89 1300 102
+        C1380 115 1450 101 1510 120
+        Q1560 130 1600 145
+
+        L1600 292
+
+        C1550 285 1510 310 1460 299
+        C1390 285 1340 320 1270 307
+        C1190 292 1140 326 1060 313
+        C980 298 920 331 840 316
+        C760 300 690 330 610 315
+        C530 300 460 330 385 310
+        C310 292 245 320 180 305
+        C120 290 65 316 0 298
+        Z"/>
+
+      <!-- Irregular paint buildup at the left -->
+      <path fill="white" d="
+        M0 38
+        Q40 25 85 45
+        Q125 35 165 56
+        L210 75
+        L0 100 Z"/>
+
+      <path fill="white" d="
+        M0 298
+        Q45 338 110 320
+        Q160 343 220 310
+        L0 270 Z"/>
+
+      <!-- Dry brush streaks: actual transparent gaps -->
+      <g fill="black" opacity=".95">
+        <path d="M80 91 Q240 78 430 94 Q300 91 180 104 Z"/>
+        <path d="M310 115 Q570 96 760 116 Q530 108 310 123 Z"/>
+        <path d="M760 129 Q1060 111 1320 140 Q1080 125 760 135 Z"/>
+        <path d="M1080 160 Q1340 149 1570 176 Q1350 163 1080 166 Z"/>
+
+        <path d="M120 280 Q350 291 550 278 Q350 300 120 288 Z"/>
+        <path d="M540 296 Q810 307 1050 293 Q790 317 540 303 Z"/>
+        <path d="M1030 292 Q1320 310 1540 291 Q1330 317 1030 300 Z"/>
+      </g>
+
+      <!-- Fine broken bristle marks -->
+      <g fill="black" opacity=".65">
+        <path d="M190 136 Q420 127 630 139 L380 135 Z"/>
+        <path d="M690 153 Q970 143 1190 158 L920 153 Z"/>
+        <path d="M1120 195 Q1360 187 1570 207 L1320 198 Z"/>
+        <path d="M270 255 Q500 267 700 256 L470 263 Z"/>
+        <path d="M810 270 Q1070 282 1300 269 L1030 278 Z"/>
+      </g>
+
+      <!-- Extra paint dragged beyond upper edge -->
+      <g fill="white">
+        <path d="M0 49 Q80 31 170 55 L105 57 Z"/>
+        <path d="M220 65 Q330 43 430 69 L350 72 Z"/>
+        <path d="M520 74 Q650 55 770 78 L670 83 Z"/>
+        <path d="M900 84 Q1040 70 1170 95 L1050 94 Z"/>
+        <path d="M1260 98 Q1400 90 1530 121 L1430 116 Z"/>
+
+        <!-- Lower edge streaks -->
+        <path d="M0 315 Q100 344 205 313 L125 325 Z"/>
+        <path d="M280 308 Q410 338 540 310 L440 323 Z"/>
+        <path d="M650 314 Q800 340 940 313 L820 326 Z"/>
+        <path d="M1050 312 Q1200 338 1350 304 L1220 319 Z"/>
+      </g>
+
+      <!-- Separate little paint traces -->
+      <g fill="white" opacity=".8">
+        <path d="M25 22 Q105 13 175 35 L95 30 Z"/>
+        <path d="M260 45 Q350 32 420 50 L330 48 Z"/>
+        <path d="M75 345 Q160 355 235 333 L165 344 Z"/>
+        <path d="M580 340 Q700 349 800 329 L690 340 Z"/>
+        <path d="M1150 336 Q1280 343 1380 315 L1260 330 Z"/>
+      </g>
+    </mask>
+  </defs>
+
+  <rect width="1600" height="400"
+        fill="white"
+        mask="url(#brush)"/>
+</svg>
