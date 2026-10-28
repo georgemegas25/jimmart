@@ -76,23 +76,10 @@ body {
   z-index: -1;
   inset: 0;
 
-  background:
-    repeating-linear-gradient(
-      176deg,
-      transparent 0px,
-      rgba(0, 35, 55, 0.12) 2px,
-      transparent 5px
-    ),
-    linear-gradient(110deg, #00E5FF, #0099cc, #003344);
-
-  -webkit-mask-image: url("./brush-mask.svg");
-  mask-image: url("./brush-mask.svg");
-
-  -webkit-mask-size: 100% 100%;
-  mask-size: 100% 100%;
-
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
+  background-image: url("./Turquoise Sweeping Acrylic Brushstroke.png");
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 
