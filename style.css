@@ -18,7 +18,7 @@ body {
   top: 0;
   width: 100%;
   background: linear-gradient(135deg, #00E5FF, #0099cc, #003344);
-  padding: 15px 0;
+  padding: 5px 0;
   z-index: 1000;
 }
 
@@ -398,10 +398,10 @@ h1, h2, h3 {
 .navbar .nav-container {
   position: relative;
   display: grid;
-  grid-template-columns: 1fr 260px 1fr;
+  grid-template-columns: 1fr 220px 1fr;
   align-items: center;
   width: 100%;
-  min-height: 100px;
+  min-height: 60px;
 }
 
 .navbar .nav-left {
@@ -506,4 +506,5 @@ h1, h2, h3 {
   font-family: 'Starborn', cursive;
   font-size: 16px;
   letter-spacing: 1px;
+  margin-left: 0;
 }
