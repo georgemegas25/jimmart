@@ -512,9 +512,7 @@ h1, h2, h3 {
   margin-left: 0;
 }
 @font-face {
-  font-family: 'LeckerliOne';
-  src: url('./LeckerliOne-Regular.ttf') format('truetype');
-  font-display: swap;
+  @import url('https://fonts.googleapis.com/css2?family=Leckerli+One&display=swap');
 }
 
 .section-text h2 {
