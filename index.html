@@ -20,9 +20,9 @@
   
 <nav class="navbar">
   <div class="nav-container">
-    <div class="logo">JimMart</div>
 
-    <ul class="nav-links">
+    <!-- LEFT MENU -->
+    <ul class="nav-links nav-left">
       <li><a href="index.html">Home</a></li>
 
       <li class="dropdown">
@@ -37,14 +37,77 @@
           <li><a href="illustrations.html">Illustrations</a></li>
         </ul>
       </li>
-      
+    </ul>
+
+    <!-- CENTER BRUSH LOGO -->
+    <a href="index.html" class="nav-logo" aria-label="JimMart Home">
+
+      <svg class="logo-stain"
+           viewBox="0 0 420 170"
+           xmlns="http://www.w3.org/2000/svg"
+           aria-hidden="true">
+
+        <defs>
+          <mask id="nav-paint-texture">
+            <rect width="420" height="170" fill="black"/>
+
+            <path fill="white" d="
+              M8 89
+              Q34 69 61 73
+              Q80 48 122 59
+              Q155 39 191 55
+              Q236 40 265 57
+              Q304 44 334 64
+              Q370 59 407 77
+              L387 85
+              Q413 95 395 106
+              Q370 110 354 119
+              Q316 116 293 132
+              Q250 124 217 137
+              Q180 125 150 141
+              Q114 128 85 135
+              Q53 118 23 124
+              L43 107
+              L5 104
+              Z"/>
+
+            <g fill="black">
+              <path d="M16 91 Q85 75 146 81 L61 90 Z"/>
+              <path d="M225 67 Q306 59 394 78 L310 72 Z"/>
+              <path d="M58 121 Q130 130 200 124 L116 133 Z"/>
+              <path d="M270 118 Q344 123 395 101 L336 118 Z"/>
+            </g>
+
+            <g fill="white">
+              <path d="M29 68 L115 48 L87 62 Z"/>
+              <path d="M133 49 L220 39 L185 53 Z"/>
+              <path d="M288 53 L375 62 L333 64 Z"/>
+              <path d="M41 135 L113 145 L82 136 Z"/>
+              <path d="M207 139 L297 130 L258 140 Z"/>
+              <path d="M333 126 L407 109 L372 124 Z"/>
+            </g>
+          </mask>
+        </defs>
+
+        <rect width="420"
+              height="170"
+              fill="white"
+              mask="url(#nav-paint-texture)"/>
+      </svg>
+
+      <img src="LOGO.png"
+           alt="JimMart Logo"
+           class="nav-logo-image">
+    </a>
+
+    <!-- RIGHT MENU -->
+    <ul class="nav-links nav-right">
       <li><a href="bio.html">Artist Statement</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
 
   </div>
 </nav>
-
 
   
 </section>
