@@ -490,3 +490,20 @@ h1, h2, h3 {
 .navbar .nav-right {
   padding-left: 0;
 }
+/* STARBORN FONT */
+
+@font-face {
+  font-family: 'Starborn';
+  src: url('./Starborn.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* NAVBAR TEXT */
+
+.navbar .nav-links a {
+  font-family: 'Starborn', cursive;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
