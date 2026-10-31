@@ -375,7 +375,7 @@ h1, h2, h3 {
 }
 
 .section:nth-of-type(2)::before {
-  filter: hue-rotate(90deg) saturate(1.8);
+  filter: hue-rotate(300deg) saturate(2.2) brightness(1.1);
 }
 
 .section:nth-of-type(3)::before {
@@ -394,7 +394,7 @@ h1, h2, h3 {
   filter: hue-rotate(40deg) saturate(2);
 }
 .section:nth-of-type(7)::before {
-  filter: hue-rotate(300deg) saturate(2.2) brightness(1.1);
+  filter: hue-rotate(90deg) saturate(1.8);
 }
 /* NAVBAR LAYOUT */
 
