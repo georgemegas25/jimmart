@@ -393,6 +393,9 @@ h1, h2, h3 {
 .section:nth-of-type(6)::before {
   filter: hue-rotate(40deg) saturate(2);
 }
+.section:nth-of-type(7)::before {
+  filter: hue-rotate(300deg) saturate(2.2) brightness(1.1);
+}
 /* NAVBAR LAYOUT */
 
 .navbar .nav-container {
