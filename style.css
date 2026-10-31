@@ -398,7 +398,7 @@ h1, h2, h3 {
 .navbar .nav-container {
   position: relative;
   display: grid;
-  grid-template-columns: 1fr 300px 1fr;
+  grid-template-columns: 1fr 500px 1fr;
   align-items: center;
   width: 100%;
   min-height: 60px;
@@ -409,7 +409,7 @@ h1, h2, h3 {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: 60px;
+  gap: 100px;
 }
 
 .navbar .nav-right {
@@ -417,7 +417,7 @@ h1, h2, h3 {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  gap: 60px;
+  gap: 100px;
 }
 
 /* CENTER LOGO */
