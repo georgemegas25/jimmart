@@ -398,7 +398,7 @@ h1, h2, h3 {
 .navbar .nav-container {
   position: relative;
   display: grid;
-  grid-template-columns: 1fr 500px 1fr;
+  grid-template-columns: 1fr 1000px 1fr;
   align-items: center;
   width: 100%;
   min-height: 60px;
