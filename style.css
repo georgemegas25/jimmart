@@ -509,13 +509,13 @@ h1, h2, h3 {
   margin-left: 0;
 }
 @font-face {
-  font-family: 'Forte';
+  font-family: 'LeckerliOne-Regular';
   src: url('./LeckerliOne-Regular.ttf') format('truetype');
   font-display: swap;
 }
 
 .section-text h2 {
-  font-family: 'Forte', cursive;
+  font-family: 'LeckerliOne-Regular', cursive;
   font-size: 48px;
   transition: transform 0.3s ease, text-shadow 0.3s ease;
   cursor: default;
