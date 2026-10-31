@@ -1,3 +1,7 @@
+@font-face {
+  @import url('https://fonts.googleapis.com/css2?family=Leckerli+One&display=swap');
+}
+
 /* Reset */
 * {
   margin: 0;
@@ -510,9 +514,6 @@ h1, h2, h3 {
   font-size: 16px;
   letter-spacing: 1px;
   margin-left: 0;
-}
-@font-face {
-  @import url('https://fonts.googleapis.com/css2?family=Leckerli+One&display=swap');
 }
 
 .section-text h2 {
