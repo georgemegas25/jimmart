@@ -409,7 +409,7 @@ h1, h2, h3 {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: 100px;
+  gap: 200px;
 }
 
 .navbar .nav-right {
@@ -417,7 +417,7 @@ h1, h2, h3 {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  gap: 100px;
+  gap: 200px;
 }
 
 /* CENTER LOGO */
