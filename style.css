@@ -398,7 +398,7 @@ h1, h2, h3 {
 .navbar .nav-container {
   position: relative;
   display: grid;
-  grid-template-columns: 1fr 220px 1fr;
+  grid-template-columns: 1fr 3000px 1fr;
   align-items: center;
   width: 100%;
   min-height: 60px;
@@ -409,7 +409,7 @@ h1, h2, h3 {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: 35px;
+  gap: 60px;
 }
 
 .navbar .nav-right {
@@ -417,7 +417,7 @@ h1, h2, h3 {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  gap: 35px;
+  gap: 60px;
 }
 
 /* CENTER LOGO */
@@ -471,7 +471,7 @@ h1, h2, h3 {
     grid-column: 1;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 16px;
+    gap: 35px;
   }
 
   .navbar .nav-logo-image {
