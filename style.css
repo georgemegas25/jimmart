@@ -479,3 +479,14 @@ h1, h2, h3 {
     height: 48px;
   }
 }
+/* Fix spacing for new navbar */
+
+.navbar .nav-left li,
+.navbar .nav-right li {
+  margin-left: 0;
+}
+
+.navbar .nav-left,
+.navbar .nav-right {
+  padding-left: 0;
+}
