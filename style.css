@@ -95,7 +95,6 @@ body {
   width: 100%;
   text-align: center;
 }
-
 .section-content p {
   margin-bottom: 12px;
 }
@@ -513,7 +512,7 @@ h1, h2, h3 {
 
 .section-content h2 {
   font-family: 'Leckerli One', cursive;
-  font-size: 48px;
+  font-size: 65px;
   transition: transform 0.3s ease, text-shadow 0.3s ease;
   cursor: default;
 }
