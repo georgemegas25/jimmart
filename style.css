@@ -518,8 +518,3 @@ h1, h2, h3 {
   transition: transform 0.3s ease, text-shadow 0.3s ease;
   cursor: default;
 }
-
-.section-content h2:hover {
-  transform: scale(1.12);
-  text-shadow: 0 0 12px rgba(255, 255, 255, 0.9);
-}
