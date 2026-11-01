@@ -126,6 +126,11 @@ body {
   object-fit: contain;
   border-radius: 4px;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+.section-art img:hover {
+  transform: scale(1.1);
+  filter: brightness(1.15);
 }
 
 /* Κινητά και μικρές οθόνες */
@@ -517,4 +522,8 @@ h1, h2, h3 {
   font-size: 65px;
   transition: transform 0.3s ease, text-shadow 0.3s ease;
   cursor: default;
+}
+.section-content h2:hover {
+  transform: scale(1.12);
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.9);
 }
