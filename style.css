@@ -96,15 +96,8 @@ body {
   text-align: center;
 }
 
-.section h2 {
-  margin-bottom: 10px;
-  font-size: 80px;
-  letter-spacing: 5px;
-  color: #fff;
-}
-
 .section-content p {
-  margin-bottom: 15px;
+  margin-bottom: 12px;
 }
 
 /* Εικόνες αριστερά και δεξιά */
