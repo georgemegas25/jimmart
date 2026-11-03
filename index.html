@@ -55,7 +55,7 @@
     <!-- RIGHT MENU -->
     <ul class="nav-links nav-right">
       <li><a href="bio.html">Artist Statement</a></li>
-      <li><a href="contact.html">Contact</a></li>
+      <li><a href="#" id="contact-trigger">Contact</a></li>
     </ul>
 
   </div>
@@ -171,9 +171,58 @@
 <div class="lightbox" id="lightbox">
   <img src="" id="lightbox-img">
 </div>
-
+<!-- Τερατάκι Linktree -->
 <script src="script.js"></script>
+ <a href="https://linktr.ee/TO_ONOMA_SOU"
+   id="dvd-monster"
+   target="_blank"
+   rel="noopener noreferrer">
+  <img src="terataki link tree.png" alt="Visit my Linktree">
+</a>
+<!-- Κίνηση DVD Screensaver -->
+  <script>
+  const contactTrigger = document.getElementById('contact-trigger');
+  const dvdMonster = document.getElementById('dvd-monster');
 
+  let x = 100;
+  let y = 100;
+  let dx = 2.5;
+  let dy = 2;
+  let running = false;
+
+  contactTrigger.addEventListener('click', function(event) {
+    event.preventDefault();
+
+    if (running) return;
+
+    dvdMonster.style.display = 'block';
+    running = true;
+    requestAnimationFrame(animateMonster);
+  });
+
+  function animateMonster() {
+    if (!running) return;
+
+    const maxX = Math.max(0, window.innerWidth - dvdMonster.offsetWidth);
+    const maxY = Math.max(0, window.innerHeight - dvdMonster.offsetHeight);
+
+    x += dx;
+    y += dy;
+
+    if (x <= 0 || x >= maxX) {
+      dx *= -1;
+      x = Math.max(0, Math.min(x, maxX));
+    }
+
+    if (y <= 0 || y >= maxY) {
+      dy *= -1;
+      y = Math.max(0, Math.min(y, maxY));
+    }
+
+    dvdMonster.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+    requestAnimationFrame(animateMonster);
+  }
+</script>
 </body>
 </html>
 
