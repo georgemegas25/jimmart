@@ -131,7 +131,6 @@ body {
 }
 .section-art img:hover {
   transform: scale(1.1);
-  filter: brightness(1.15);
 }
 
 /* Κινητά και μικρές οθόνες */
@@ -524,4 +523,7 @@ h1, h2, h3 {
   display: inline-block;
   transition: transform 0.3s ease;
   cursor: default;
+}
+.section-content h2:hover {
+  transform: scale(1.1);
 }
