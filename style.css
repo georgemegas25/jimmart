@@ -129,7 +129,7 @@ body {
   transition: transform 0.3s ease;
 }
 .section-art img:hover {
-  transform: scale(1.1);
+  transform: none;
 }
 
 /* Κινητά και μικρές οθόνες */
@@ -246,7 +246,7 @@ h1, h2, h3 {
 .reveal {
   opacity: 0;
   transform: translateY(100px);
-  transition: all 1s ease;
+  transition: opacity 1s ease, transform 1s ease;
 }
 
 .reveal.active {
@@ -524,7 +524,7 @@ h1, h2, h3 {
   cursor: default;
 }
 .section-content h2:hover {
-  transform: scale(1.1);
+  transform: none;
 }
 #dvd-monster {
   position: fixed;
