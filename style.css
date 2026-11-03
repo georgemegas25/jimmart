@@ -526,3 +526,19 @@ h1, h2, h3 {
 .section-content h2:hover {
   transform: scale(1.1);
 }
+#dvd-monster {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 180px;
+  display: none;
+  z-index: 2000;
+  cursor: pointer;
+  will-change: transform;
+}
+
+#dvd-monster img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
