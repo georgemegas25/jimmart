@@ -91,10 +91,9 @@ body {
 /* Τίτλος και κείμενο στο κέντρο */
 .section-content {
   position: relative;
-  z-index: 2;
+  z-index: 1;
   width: 100%;
   text-align: center;
-  pointer-events: none;
 }
 .section-content p {
   margin-bottom: 12px;
@@ -107,7 +106,7 @@ body {
   width: 22%;
   max-width: 260px;
   transform: translateY(-50%);
-  z-index: 1;
+  z-index: 2;
 }
 
 .section-art.left {
