@@ -520,10 +520,11 @@ h1, h2, h3 {
 .section-content h2 {
   font-family: 'Leckerli One', cursive;
   font-size: 65px;
-  transition: transform 0.3s ease, text-shadow 0.3s ease;
+  display: inline-block;
+  transition: transform 0.3s ease;
   cursor: default;
 }
+
 .section-content h2:hover {
-  transform: scale(1.12);
-  text-shadow: 0 0 12px rgba(255, 255, 255, 0.9);
+  transform: scale(1.05);
 }
