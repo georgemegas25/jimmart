@@ -525,8 +525,3 @@ h1, h2, h3 {
   transition: transform 0.3s ease;
   cursor: default;
 }
-
-.section-content h2:hover {
-  transform: scale(1.10);
-  pointer-events: auto;
-}
