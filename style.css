@@ -94,6 +94,7 @@ body {
   z-index: 2;
   width: 100%;
   text-align: center;
+  pointer-events: none;
 }
 .section-content p {
   margin-bottom: 12px;
@@ -526,5 +527,6 @@ h1, h2, h3 {
 }
 
 .section-content h2:hover {
-  transform: scale(1.05);
+  transform: scale(1.10);
+  pointer-events: auto;
 }
