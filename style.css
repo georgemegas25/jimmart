@@ -525,7 +525,7 @@ h1, h2, h3 {
   cursor: default;
 }
 .section-content h2:hover {
-  transform: none;
+  transform: scale(1.1);
 }
 #dvd-monster {
   position: fixed;
