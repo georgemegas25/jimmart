@@ -2,7 +2,7 @@
 <html lang="el">
 <head>
   <meta charset="UTF-8">
-  <title>Bio</title>
+  <title>Artist Statement</title>
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
@@ -11,42 +11,119 @@
 </head>
 <body>
 
+  <iframe 
+  id="bg-video"
+  src="https://www.youtube.com/embed/7OClD6FokfM?autoplay=1&mute=1&loop=1&controls=0&playlist=7OClD6FokfM"
+  frameborder="0"
+  allow="autoplay"
+></iframe>
+  
 <nav class="navbar">
   <div class="nav-container">
-    <div class="logo">MyPortfolio</div>
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="bio.html">Bio</a>
-      <a href="works.html">Έργα</a>
-      <a href="contact.html">Contact</a>
-    </div>
+
+    <!-- LEFT MENU -->
+    <ul class="nav-links nav-left">
+      <li><a href="index.html">Home</a></li>
+
+      <li class="dropdown">
+        <a href="works.html">Artworks ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="paintings.html">Paintings</a></li>
+          <li><a href="video.html">Videography</a></li>
+          <li><a href="digital.html">Digital</a></li>
+          <li><a href="posters.html">Posters</a></li>
+          <li><a href="sculptures.html">Sculptures</a></li>
+          <li><a href="installations.html">Installations</a></li>
+          <li><a href="illustrations.html">Illustrations</a></li>
+        </ul>
+      </li>
+    </ul>
+
+    <!-- CENTER BRUSH LOGO -->
+<a href="index.html" class="nav-logo" aria-label="JimMart Home">
+
+  <img src="white-brush.png"
+       alt=""
+       class="logo-stain">
+
+  <img src="LOGO.jpg"
+       alt="JimMart Logo"
+       class="nav-logo-image">
+
+</a>
+
+    <!-- RIGHT MENU -->
+    <ul class="nav-links nav-right">
+      <li><a href="bio.html">Artist Statement</a></li>
+      <li><a href="#" id="contact-trigger">Contact</a></li>
+    </ul>
+
   </div>
 </nav>
 
-<!-- PARALLAX HERO SECTION -->
-<section class="section parallax" style="background-image: url('images/bg.jpg'); height: 100vh; display:flex; align-items:center; justify-content:center; text-align:center;">
-  <h2 class="reveal" style="font-size:60px;">Βιογραφικό</h2>
-</section>
 
-<!-- BIO CONTENT -->
-<section class="section">
-  <p class="reveal" style="max-width:800px; margin:auto; text-align:center;">
-    Λίγα λόγια για τον καλλιτέχνη. Εδώ μπορείς να γράψεις την ιστορία του,
-    την πορεία του, τις εκθέσεις του, τη φιλοσοφία του και οτιδήποτε τον εκφράζει.
-  </p>
-</section>
-
-<footer>
-  © 2026 MyPortfolio
-</footer>
-
+<!-- Cursor + Lightbox -->
 <div class="cursor"></div>
+
 <div class="lightbox" id="lightbox">
   <img src="" id="lightbox-img">
 </div>
-
+<!-- Τερατάκι Linktree -->
 <script src="script.js"></script>
+ <a href="https://linktr.ee/Jimmakrr"
+   id="dvd-monster"
+   target="_blank"
+   rel="noopener noreferrer">
+  <img src="terataki link tree.png" alt="Visit my Linktree">
+</a>
+<!-- Κίνηση DVD Screensaver -->
+  <script>
+  const contactTrigger = document.getElementById('contact-trigger');
+  const dvdMonster = document.getElementById('dvd-monster');
 
+  let x = 100;
+  let y = 100;
+  let dx = 2.5;
+  let dy = 2;
+  let running = false;
+
+  contactTrigger.addEventListener('click', function(event) {
+    event.preventDefault();
+
+    if (running) return;
+
+    dvdMonster.style.display = 'block';
+    running = true;
+    requestAnimationFrame(animateMonster);
+  });
+
+  function animateMonster() {
+    if (!running) return;
+
+    const maxX = Math.max(0, window.innerWidth - dvdMonster.offsetWidth);
+    const maxY = Math.max(0, window.innerHeight - dvdMonster.offsetHeight);
+
+    x += dx;
+    y += dy;
+
+    if (x <= 0 || x >= maxX) {
+      dx *= -1;
+      x = Math.max(0, Math.min(x, maxX));
+    }
+
+    if (y <= 0 || y >= maxY) {
+      dy *= -1;
+      y = Math.max(0, Math.min(y, maxY));
+    }
+
+    dvdMonster.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+    requestAnimationFrame(animateMonster);
+  }
+</script>
 </body>
 </html>
+
+
+
+
 
