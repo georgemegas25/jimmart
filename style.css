@@ -553,66 +553,84 @@ body.bio-page {
   background-attachment: fixed;
   min-height: 100vh;
 }
-/* ARTIST STATEMENT — TWO PARCHMENTS */
+/* ARTIST STATEMENT — ONE SCROLL */
 
 .bio-page .artist-statement {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
-  gap: 35px;
-  max-width: 1200px;
-  margin: 150px auto 70px;
-  padding: 0 25px;
+  padding: 0 20px;
+  margin: 140px auto 80px;
 }
 
 .bio-page .parchment {
-  width: 50%;
-  min-height: 750px;
+  width: 100%;
+  max-width: 650px;
+  min-height: 900px;
 
   background-image: url("./Scroll.png");
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: center;
 
-  padding: 100px 65px;
+  padding: 150px 85px 110px;
+  box-sizing: border-box;
 }
 
 .bio-page .parchment-text {
   font-family: 'Caveat', cursive;
-  color: #392012;
-  text-align: center;
+  color: #442817;
+  text-align: left;
 }
 
-.bio-page .parchment-text h2 {
-  font-family: 'Caveat', cursive;
-  font-size: 48px;
+.bio-page .parchment-text h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 52px;
   font-weight: normal;
-  margin-bottom: 30px;
+  text-align: center;
+  margin: 0 0 45px;
 }
 
 .bio-page .parchment-text p {
-  font-size: 31px;
+  font-size: 29px;
   line-height: 1.5;
-  margin-bottom: 20px;
+  margin: 0 0 25px;
+}
+
+.bio-page .parchment-text .opening {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 40px;
+}
+
+.bio-page .parchment-text .signature {
+  font-family: 'Great Vibes', cursive;
+  font-size: 43px;
+  text-align: right;
+  margin-top: 55px;
 }
 
 /* MOBILE */
 
 @media (max-width: 700px) {
   .bio-page .artist-statement {
-    flex-direction: column;
-    align-items: center;
-    margin-top: 160px;
-    gap: 25px;
+    margin-top: 120px;
+    padding: 0 10px;
   }
 
   .bio-page .parchment {
-    width: 100%;
-    min-height: 650px;
-    padding: 90px 45px;
+    min-height: 750px;
+    padding: 125px 45px 85px;
+  }
+
+  .bio-page .parchment-text h1 {
+    font-size: 38px;
   }
 
   .bio-page .parchment-text p {
-    font-size: 27px;
+    font-size: 24px;
+  }
+
+  .bio-page .parchment-text .opening {
+    font-size: 26px;
   }
 }
