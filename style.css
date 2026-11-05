@@ -548,7 +548,7 @@ h1, h2, h3 {
 body.bio-page {
   background-image: url("./PG3.jpg1-01.jpg");
   background-repeat: repeat-x;
-  background-size: auto 500px;
+  background-size: auto 100vh;
   background-position: top left;
   background-attachment: fixed;
   min-height: 100vh;
