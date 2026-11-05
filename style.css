@@ -553,3 +553,66 @@ body.bio-page {
   background-attachment: fixed;
   min-height: 100vh;
 }
+/* ARTIST STATEMENT — TWO PARCHMENTS */
+
+.bio-page .artist-statement {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 35px;
+  max-width: 1200px;
+  margin: 150px auto 70px;
+  padding: 0 25px;
+}
+
+.bio-page .parchment {
+  width: 50%;
+  min-height: 750px;
+
+  background-image: url("./parchment.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  padding: 100px 65px;
+}
+
+.bio-page .parchment-text {
+  font-family: 'Great Vibes', cursive;
+  color: #392012;
+  text-align: center;
+}
+
+.bio-page .parchment-text h2 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 48px;
+  font-weight: normal;
+  margin-bottom: 30px;
+}
+
+.bio-page .parchment-text p {
+  font-size: 31px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+  .bio-page .artist-statement {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 160px;
+    gap: 25px;
+  }
+
+  .bio-page .parchment {
+    width: 100%;
+    min-height: 650px;
+    padding: 90px 45px;
+  }
+
+  .bio-page .parchment-text p {
+    font-size: 27px;
+  }
+}
