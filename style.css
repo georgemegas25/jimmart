@@ -543,3 +543,13 @@ h1, h2, h3 {
   width: 100%;
   height: auto;
 }
+/* ARTIST STATEMENT BACKGROUND */
+
+body.bio-page {
+  background-image: url("./PG3.jpg1-01.jpg");
+  background-repeat: repeat-x;
+  background-size: auto 500px;
+  background-position: top left;
+  background-attachment: fixed;
+  min-height: 100vh;
+}
