@@ -564,7 +564,7 @@ body.bio-page {
 
 .bio-page .parchment {
   width: 100%;
-  max-width: 650px;
+  max-width: 850px; /* Πιο φαρδύ scroll */
   min-height: 900px;
 
   background-image: url("./Scroll 1.png");
@@ -572,7 +572,7 @@ body.bio-page {
   background-repeat: no-repeat;
   background-position: center;
 
-  padding: 150px 85px 110px;
+  padding: 210px 110px 110px; /* Το κείμενο ξεκινά πιο κάτω */
   box-sizing: border-box;
 }
 
@@ -618,9 +618,9 @@ body.bio-page {
   }
 
   .bio-page .parchment {
-    min-height: 750px;
-    padding: 125px 45px 85px;
-  }
+  min-height: 750px;
+  padding: 160px 45px 85px;
+}
 
   .bio-page .parchment-text h1 {
     font-size: 38px;
