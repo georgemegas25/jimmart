@@ -634,3 +634,28 @@ body.bio-page {
     font-size: 26px;
   }
 }
+/* ARTISTIC EXHIBITION LIST */
+
+.bio-page .art-list {
+  list-style: none;
+  padding-left: 15px;
+  margin: 0 0 35px;
+
+  font-family: 'Caveat', cursive;
+  font-size: 29px;
+  line-height: 1.5;
+  color: #442817;
+}
+
+.bio-page .art-list li {
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 18px;
+}
+
+.bio-page .art-list li::before {
+  content: "✦";
+  position: absolute;
+  left: 0;
+  color: #8b5a32;
+}
