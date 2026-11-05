@@ -181,47 +181,73 @@
 </a>
 <!-- Κίνηση DVD Screensaver -->
   <script>
-  const contactTrigger = document.getElementById('contact-trigger');
-  const dvdMonster = document.getElementById('dvd-monster');
+ // CONTACT MONSTERS — NEW MONSTER ON EVERY CLICK
 
-  let x = 100;
-  let y = 100;
-  let dx = 2.5;
-  let dy = 2;
-  let running = false;
+const contactTrigger = document.getElementById("contact-trigger");
+const monsterTemplate = document.getElementById("dvd-monster");
 
-  contactTrigger.addEventListener('click', function(event) {
+if (contactTrigger && monsterTemplate) {
+  const monsters = [];
+
+  // Κρύβουμε το αρχικό τερατάκι, το χρησιμοποιούμε ως πρότυπο
+  monsterTemplate.style.display = "none";
+
+  contactTrigger.addEventListener("click", (event) => {
     event.preventDefault();
 
-    if (running) return;
+    // Δημιουργούμε νέο τερατάκι
+    const monster = monsterTemplate.cloneNode(true);
+    monster.removeAttribute("id");
 
-    dvdMonster.style.display = 'block';
-    running = true;
-    requestAnimationFrame(animateMonster);
+    monster.style.display = "block";
+    monster.style.position = "fixed";
+    monster.style.zIndex = "9999";
+    monster.style.pointerEvents = "auto";
+
+    document.body.appendChild(monster);
+
+    const width = monster.offsetWidth;
+    const height = monster.offsetHeight;
+
+    monsters.push({
+      element: monster,
+      x: Math.random() * Math.max(0, window.innerWidth - width),
+      y: Math.random() * Math.max(0, window.innerHeight - height),
+      vx: (Math.random() > 0.5 ? 1 : -1) * (2 + Math.random() * 2),
+      vy: (Math.random() > 0.5 ? 1 : -1) * (2 + Math.random() * 2)
+    });
   });
 
-  function animateMonster() {
-    if (!running) return;
+  function animateMonsters() {
+    monsters.forEach((monster) => {
+      const width = monster.element.offsetWidth;
+      const height = monster.element.offsetHeight;
 
-    const maxX = Math.max(0, window.innerWidth - dvdMonster.offsetWidth);
-    const maxY = Math.max(0, window.innerHeight - dvdMonster.offsetHeight);
+      const maxX = Math.max(0, window.innerWidth - width);
+      const maxY = Math.max(0, window.innerHeight - height);
 
-    x += dx;
-    y += dy;
+      monster.x += monster.vx;
+      monster.y += monster.vy;
 
-    if (x <= 0 || x >= maxX) {
-      dx *= -1;
-      x = Math.max(0, Math.min(x, maxX));
-    }
+      if (monster.x <= 0 || monster.x >= maxX) {
+        monster.vx *= -1;
+        monster.x = Math.max(0, Math.min(monster.x, maxX));
+      }
 
-    if (y <= 0 || y >= maxY) {
-      dy *= -1;
-      y = Math.max(0, Math.min(y, maxY));
-    }
+      if (monster.y <= 0 || monster.y >= maxY) {
+        monster.vy *= -1;
+        monster.y = Math.max(0, Math.min(monster.y, maxY));
+      }
 
-    dvdMonster.style.transform = `translate3d(${x}px, ${y}px, 0)`;
-    requestAnimationFrame(animateMonster);
+      monster.element.style.transform =
+        `translate3d(${monster.x}px, ${monster.y}px, 0)`;
+    });
+
+    requestAnimationFrame(animateMonsters);
   }
+
+  animateMonsters();
+}
 </script>
 </body>
 </html>
