@@ -569,7 +569,7 @@ body.bio-page {
   width: 50%;
   min-height: 750px;
 
-  background-image: url("./Sheet.png");
+  background-image: url("./Scroll.png");
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: center;
@@ -584,7 +584,7 @@ body.bio-page {
 }
 
 .bio-page .parchment-text h2 {
-  font-family: 'Great Vibes', cursive;
+  font-family: 'Caveat', cursive;
   font-size: 48px;
   font-weight: normal;
   margin-bottom: 30px;
