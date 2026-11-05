@@ -559,7 +559,7 @@ body.bio-page {
   display: flex;
   justify-content: center;
   padding: 0 20px;
-  margin: 90px auto 80px;
+  margin: 40px auto 80px;
 }
 
 .bio-page .parchment {
@@ -572,7 +572,7 @@ body.bio-page {
   background-repeat: no-repeat;
   background-position: center;
 
-  padding: 320px 110px 110px; /* Το κείμενο ξεκινά πιο κάτω */
+  padding: 280px 110px 110px; /* Το κείμενο ξεκινά πιο κάτω */
   box-sizing: border-box;
 }
 
