@@ -584,7 +584,7 @@ body.bio-page {
 
 .bio-page .parchment-text h1 {
   font-family: 'Grenze Gotisch', serif;
-  font-size: 52px;
+  font-size: 75px;
   font-weight: normal;
   text-align: center;
   margin: 0 0 45px;
@@ -642,7 +642,7 @@ body.bio-page {
   margin: 0 0 35px;
 
   font-family: 'Grenze Gotisch', serif;
-  font-size: 29px;
+  font-size: 45px;
   line-height: 1.5;
   color: #442817;
 }
