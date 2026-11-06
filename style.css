@@ -659,3 +659,20 @@ body.bio-page {
   left: 0;
   color: #8b5a32;
 }
+/* Κάθε νέο τερατάκι */
+
+.moving-monster {
+  position: fixed;
+  display: block;
+  width: 180px;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  will-change: transform;
+}
+
+.moving-monster img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
