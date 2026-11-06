@@ -101,58 +101,51 @@
 </div>
 <!-- Τερατάκι Linktree -->
 <script>
-  const contactTrigger = document.getElementById('contact-trigger');
-  const dvdMonster = document.getElementById('dvd-monster');
+const contactTrigger = document.getElementById('contact-trigger');
+const dvdMonster = document.getElementById('dvd-monster');
 
-  contactTrigger.addEventListener('click', function(event) {
-    event.preventDefault();
+contactTrigger.addEventListener('click', function(event) {
+  event.preventDefault();
 
-    // Δημιουργούμε ένα νέο τερατάκι
-    const monster = dvdMonster.cloneNode(true);
+  // Δημιουργούμε νέο τερατάκι
+  const monster = dvdMonster.cloneNode(true);
+  monster.removeAttribute('id');
+  monster.classList.add('moving-monster');
 
-    // Αφαιρούμε το ID για να μην υπάρχουν διπλά IDs
-    monster.removeAttribute('id');
+  document.body.appendChild(monster);
 
-    // Κρατάμε την ίδια εμφάνιση με το αρχικό
-    monster.style.position = 'fixed';
-    monster.style.display = 'block';
-    monster.style.width = '180px';
-    monster.style.zIndex = '9999';
+  monster.style.display = 'block';
 
-    document.body.appendChild(monster);
+  let x = Math.random() * Math.max(0, window.innerWidth - monster.offsetWidth);
+  let y = Math.random() * Math.max(0, window.innerHeight - monster.offsetHeight);
 
-    // Κάθε τερατάκι ξεκινά από διαφορετική θέση
-    let x = Math.random() * Math.max(0, window.innerWidth - monster.offsetWidth);
-    let y = Math.random() * Math.max(0, window.innerHeight - monster.offsetHeight);
+  let dx = (Math.random() < 0.5 ? -1 : 1) * 2.5;
+  let dy = (Math.random() < 0.5 ? -1 : 1) * 2;
 
-    // Τυχαία κατεύθυνση
-    let dx = (Math.random() < 0.5 ? -1 : 1) * 2.5;
-    let dy = (Math.random() < 0.5 ? -1 : 1) * 2;
+  function animateMonster() {
+    const maxX = Math.max(0, window.innerWidth - monster.offsetWidth);
+    const maxY = Math.max(0, window.innerHeight - monster.offsetHeight);
 
-    function animateMonster() {
-      const maxX = Math.max(0, window.innerWidth - monster.offsetWidth);
-      const maxY = Math.max(0, window.innerHeight - monster.offsetHeight);
+    x += dx;
+    y += dy;
 
-      x += dx;
-      y += dy;
-
-      if (x <= 0 || x >= maxX) {
-        dx *= -1;
-        x = Math.max(0, Math.min(x, maxX));
-      }
-
-      if (y <= 0 || y >= maxY) {
-        dy *= -1;
-        y = Math.max(0, Math.min(y, maxY));
-      }
-
-      monster.style.transform = `translate3d(${x}px, ${y}px, 0)`;
-
-      requestAnimationFrame(animateMonster);
+    if (x <= 0 || x >= maxX) {
+      dx *= -1;
+      x = Math.max(0, Math.min(x, maxX));
     }
 
-    animateMonster();
-  });
+    if (y <= 0 || y >= maxY) {
+      dy *= -1;
+      y = Math.max(0, Math.min(y, maxY));
+    }
+
+    monster.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+
+    requestAnimationFrame(animateMonster);
+  }
+
+  animateMonster();
+});
 </script>
 </body>
 </html>
