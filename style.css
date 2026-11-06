@@ -572,7 +572,7 @@ body.bio-page {
   background-repeat: no-repeat;
   background-position: center;
 
-  padding: 280px 110px 110px; /* Το κείμενο ξεκινά πιο κάτω */
+  padding: 320px 110px 110px; /* Το κείμενο ξεκινά πιο κάτω */
   box-sizing: border-box;
 }
 
