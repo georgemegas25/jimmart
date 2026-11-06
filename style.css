@@ -577,13 +577,13 @@ body.bio-page {
 }
 
 .bio-page .parchment-text {
-  font-family: 'Caveat', cursive;
+  font-family: 'Cormorant Garamond', Georgia, serif;
   color: #442817;
   text-align: left;
 }
 
 .bio-page .parchment-text h1 {
-  font-family: 'Great Vibes', cursive;
+  font-family: 'Cormorant Garamond', Georgia, serif;
   font-size: 52px;
   font-weight: normal;
   text-align: center;
@@ -641,7 +641,7 @@ body.bio-page {
   padding-left: 15px;
   margin: 0 0 35px;
 
-  font-family: 'Caveat', cursive;
+  font-family: 'Cormorant Garamond', Georgia, serif;
   font-size: 29px;
   line-height: 1.5;
   color: #442817;
