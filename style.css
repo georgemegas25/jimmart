@@ -676,29 +676,17 @@ body.bio-page {
   width: 100%;
   height: auto;
 }
-
 /* ===== PAINTINGS BACKGROUND ===== */
 
 body.paintings-page {
   min-height: 100vh;
-  position: relative;
-  isolation: isolate;
-  background: transparent;
+  background: #FF1744;
+  color: white;
 }
 
-/* Ίδια απόχρωση με την πινελιά Paintings στο Home */
+/* Αφαιρούμε την εικόνα της πινελιάς */
 body.paintings-page::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-
-  background-image: url("./Turquoise Textured Paint Stroke.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  filter: hue-rotate(175deg) saturate(2) brightness(1.2);
+  content: none;
 }
 /* Clickable section titles */
 
