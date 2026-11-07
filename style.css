@@ -326,9 +326,13 @@ h1, h2, h3 {
 
 /* ===== DROPDOWN ===== */
 
+.dropdown {
+  position: relative;
+}
+
 .dropdown-menu {
   position: absolute;
-  top: 40px;
+  top: 100%;
   left: 0;
   background: rgba(0,0,0,0.95);
   list-style: none;
@@ -336,6 +340,8 @@ h1, h2, h3 {
   display: none;
   min-width: 180px;
   border-radius: 6px;
+  margin-top: 0;
+  z-index: 1100;
 }
 
 .dropdown-menu li {
@@ -352,7 +358,8 @@ h1, h2, h3 {
 }
 
 /* Show dropdown on hover */
-.dropdown:hover .dropdown-menu {
+.dropdown:hover .dropdown-menu,
+.dropdown:focus-within .dropdown-menu {
   display: block;
 }
 /* ===== GLOBAL YOUTUBE BACKGROUND ===== */
