@@ -709,3 +709,44 @@ body.paintings-page {
   background-size: 100% auto;
   background-attachment: fixed;
 }
+/* ===== PAINTINGS GALLERY ===== */
+
+.paintings-gallery {
+  width: 100%;
+  min-height: 100vh;
+  padding: 140px 5% 80px;
+}
+
+.artworks-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 25px;
+  width: 100%;
+}
+
+.artwork-card {
+  width: 100%;
+  min-width: 0;
+}
+
+.artwork-card img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  display: block;
+  border-radius: 8px;
+}
+
+/* Tablet */
+@media (max-width: 1000px) {
+  .artworks-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .artworks-grid {
+    grid-template-columns: 1fr;
+  }
+}
