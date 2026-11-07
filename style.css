@@ -700,3 +700,14 @@ body.paintings-page::before {
 
   filter: hue-rotate(175deg) saturate(2) brightness(1.2);
 }
+/* Clickable section titles */
+
+.section-title-link {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.section-title-link:visited {
+  color: inherit;
+}
