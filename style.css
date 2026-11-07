@@ -757,3 +757,13 @@ body.paintings-page {
     grid-template-columns: 1fr;
   }
 }
+/* ===== ARTWORK TITLES ===== */
+
+.artwork-title {
+  font-family: 'Leckerli One', cursive;
+  font-size: 30px;
+  color: black;
+  text-align: center;
+  margin-top: 12px;
+  line-height: 1.4;
+}
