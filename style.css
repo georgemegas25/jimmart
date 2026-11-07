@@ -767,3 +767,17 @@ body.paintings-page {
   margin-top: 12px;
   line-height: 1.4;
 }
+/* ===== ARTWORK IMAGE HOVER ===== */
+
+.artwork-card img {
+  transition: transform 0.35s ease,
+              box-shadow 0.35s ease;
+  cursor: pointer;
+}
+
+.artwork-card img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+  position: relative;
+  z-index: 2;
+}
