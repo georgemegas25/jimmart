@@ -38,18 +38,19 @@ if (artworkLightbox) {
   }
 
   document.addEventListener('click', function(event) {
-    const image = event.target.closest('.artwork-card img');
+    const image = event.target.closest('.artwork-card img, .section-art img');
 
     if (!image) return;
 
     artworkImage.src = image.src;
     artworkImage.alt = image.alt;
 
-    const card = image.closest('.artwork-card');
+    const card = image.closest('.artwork-card, .section-art');
 
     document.getElementById('artwork-name').textContent =
       card.dataset.name ||
       card.querySelector('.artwork-title')?.textContent ||
+      image.alt ||
       '';
 
     document.getElementById('artwork-dimensions').textContent =
