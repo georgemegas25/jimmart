@@ -781,3 +781,14 @@ body.paintings-page {
   position: relative;
   z-index: 2;
 }
+/* ===== DIGITAL PAGE BACKGROUND ===== */
+
+body.digital-page {
+  min-height: 100vh;
+  background: #7DFF38;
+  color: white;
+}
+
+body.digital-page::before {
+  content: none;
+}
