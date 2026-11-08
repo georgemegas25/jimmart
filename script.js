@@ -24,19 +24,58 @@ function revealOnScroll() {
 
 window.addEventListener("scroll", revealOnScroll);
 
-// ===== LIGHTBOX =====
+/* ===== ARTWORK LIGHTBOX ===== */
 
-const cards = document.querySelectorAll(".card img");
-const lightbox = document.getElementById("lightbox");
-const lightboxImg = document.getElementById("lightbox-img");
+const artworkLightbox = document.getElementById('artwork-lightbox');
 
-cards.forEach(img => {
-  img.addEventListener("click", () => {
-    lightbox.style.display = "flex";
-    lightboxImg.src = img.src;
+if (artworkLightbox) {
+  const artworkImage = document.getElementById('artwork-lightbox-image');
+  const artworkClose = document.getElementById('artwork-lightbox-close');
+
+  function closeArtworkLightbox() {
+    artworkLightbox.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  document.addEventListener('click', function(event) {
+    const image = event.target.closest('.artwork-card img');
+
+    if (!image) return;
+
+    artworkImage.src = image.src;
+    artworkImage.alt = image.alt;
+
+    const card = image.closest('.artwork-card');
+
+    document.getElementById('artwork-name').textContent =
+      card.dataset.name ||
+      card.querySelector('.artwork-title')?.textContent ||
+      '';
+
+    document.getElementById('artwork-dimensions').textContent =
+      card.dataset.dimensions || '—';
+
+    document.getElementById('artwork-series').textContent =
+      card.dataset.series || '—';
+
+    document.getElementById('artwork-materials').textContent =
+      card.dataset.materials || '—';
+
+    artworkLightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
   });
-});
 
-lightbox.addEventListener("click", () => {
-  lightbox.style.display = "none";
-});
+  artworkClose.addEventListener('click', closeArtworkLightbox);
+
+  artworkLightbox.addEventListener('click', function(event) {
+    if (event.target === artworkLightbox) {
+      closeArtworkLightbox();
+    }
+  });
+
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+      closeArtworkLightbox();
+    }
+  });
+}
