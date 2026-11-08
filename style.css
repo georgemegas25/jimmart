@@ -762,7 +762,7 @@ body.paintings-page {
 .artwork-title {
   font-family: 'Leckerli One', cursive;
   font-size: 30px;
-  color: black;
+  color: white;
   text-align: center;
   margin-top: 12px;
   line-height: 1.4;
@@ -801,5 +801,16 @@ body.posters-page {
 }
 
 body.posters-page::before {
+  content: none;
+}
+/* ===== DIGITAL PAGE BACKGROUND ===== */
+
+body.video-page {
+  min-height: 100vh;
+  background: #B000FF;
+  color: white;
+}
+
+body.video-page::before {
   content: none;
 }
