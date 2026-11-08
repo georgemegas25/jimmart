@@ -792,3 +792,14 @@ body.digital-page {
 body.digital-page::before {
   content: none;
 }
+/* ===== POSTERS PAGE BACKGROUND ===== */
+
+body.posters-page {
+  min-height: 100vh;
+  background: #FF1493;
+  color: white;
+}
+
+body.posters-page::before {
+  content: none;
+}
