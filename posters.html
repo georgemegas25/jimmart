@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <title>Home</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="posters-page">
+  
+<nav class="navbar">
+  <div class="nav-container">
+
+    <!-- LEFT MENU -->
+    <ul class="nav-links nav-left">
+      <li><a href="index.html">Home</a></li>
+
+      <li class="dropdown">
+        <a href="works.html">Artworks ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="paintings.html">Paintings</a></li>
+          <li><a href="digital.html">Digital</a></li>
+          <li><a href="posters.html">Posters</a></li>
+          <li><a href="sculptures.html">Sculptures</a></li>
+          <li><a href="installations.html">Installations</a></li>
+          <li><a href="illustrations.html">Illustrations</a></li>
+          <li><a href="video.html">Videography</a></li>
+        </ul>
+      </li>
+    </ul>
+
+    <!-- CENTER BRUSH LOGO -->
+<a href="index.html" class="nav-logo" aria-label="JimMart Home">
+
+  <img src="white-brush.png"
+       alt=""
+       class="logo-stain">
+
+  <img src="LOGO.jpg"
+       alt="JimMart Logo"
+       class="nav-logo-image">
+
+</a>
+
+    <!-- RIGHT MENU -->
+    <ul class="nav-links nav-right">
+      <li><a href="bio.html">Artist Statement</a></li>
+      <li><a href="#" id="contact-trigger">Contact</a></li>
+    </ul>
+
+  </div>
+</nav>
+<main class="paintings-gallery">
+  <div class="artworks-grid" id="posters-grid">
+    <!-- Εδώ θα εμφανίζονται τα Posters έργα από το CMS -->
+  </div>
+</main>
+
+<!-- Cursor + Lightbox -->
+<div class="cursor"></div>
+
+<div class="lightbox" id="lightbox">
+  <img src="" id="lightbox-img">
+</div>
+<!-- Τερατάκι Linktree -->
+<script src="script.js"></script>
+ <a href="https://linktr.ee/Jimmakrr"
+   id="dvd-monster"
+   target="_blank"
+   rel="noopener noreferrer">
+  <img src="terataki link tree.png" alt="Visit my Linktree">
+</a>
+<!-- Κίνηση DVD Screensaver -->
+  <script>
+const contactTrigger = document.getElementById('contact-trigger');
+const dvdMonster = document.getElementById('dvd-monster');
+
+contactTrigger.addEventListener('click', function(event) {
+  event.preventDefault();
+
+  // Δημιουργούμε νέο τερατάκι
+  const monster = dvdMonster.cloneNode(true);
+  monster.removeAttribute('id');
+  monster.classList.add('moving-monster');
+
+  document.body.appendChild(monster);
+
+  monster.style.display = 'block';
+
+  let x = Math.random() * Math.max(0, window.innerWidth - monster.offsetWidth);
+  let y = Math.random() * Math.max(0, window.innerHeight - monster.offsetHeight);
+
+  let dx = (Math.random() < 0.5 ? -1 : 1) * 2.5;
+  let dy = (Math.random() < 0.5 ? -1 : 1) * 2;
+
+  function animateMonster() {
+    const maxX = Math.max(0, window.innerWidth - monster.offsetWidth);
+    const maxY = Math.max(0, window.innerHeight - monster.offsetHeight);
+
+    x += dx;
+    y += dy;
+
+    if (x <= 0 || x >= maxX) {
+      dx *= -1;
+      x = Math.max(0, Math.min(x, maxX));
+    }
+
+    if (y <= 0 || y >= maxY) {
+      dy *= -1;
+      y = Math.max(0, Math.min(y, maxY));
+    }
+
+    monster.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+
+    requestAnimationFrame(animateMonster);
+  }
+
+  animateMonster();
+});
+</script>
+</body>
+</html>
+
+
+
+
