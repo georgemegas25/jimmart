@@ -510,12 +510,13 @@ h1, h2, h3 {
 }
 
 /* NAVBAR TEXT */
-
-.navbar .nav-links a {
+.navbar .nav-links a,
+.navbar .nav-links .dropdown-label {
   font-family: 'Starborn', cursive;
   font-size: 16px;
   letter-spacing: 1px;
   margin-left: 0;
+  color: white;
 }
 
 @font-face {
