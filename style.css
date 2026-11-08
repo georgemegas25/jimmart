@@ -847,3 +847,11 @@ body.video-page {
 body.video-page::before {
   content: none;
 }
+/* ===== ARTWORKS DROPDOWN LABEL ===== */
+
+.dropdown-label {
+  color: inherit;
+  font: inherit;
+  cursor: default;
+  display: inline-block;
+}
