@@ -803,7 +803,40 @@ body.posters-page {
 body.posters-page::before {
   content: none;
 }
-/* ===== DIGITAL PAGE BACKGROUND ===== */
+/* ===== SCULPTURES PAGE BACKGROUND ===== */
+
+body.sculptures-page {
+  min-height: 100vh;
+  background: #00E5FF;
+  color: white;
+}
+
+body.sculptures-page::before {
+  content: none;
+}
+/* ===== INSTALLATIONS PAGE BACKGROUND ===== */
+
+body.installations-page {
+  min-height: 100vh;
+  background: #00B84A;
+  color: white;
+}
+
+body.installations-page::before {
+  content: none;
+}
+/* ===== ILLUSTRATIONS PAGE BACKGROUND ===== */
+
+body.illustrations-page {
+  min-height: 100vh;
+  background: #2563FF;
+  color: white;
+}
+
+body.illustrations-page::before {
+  content: none;
+}
+/* ===== VIDEOGRAPHY PAGE BACKGROUND ===== */
 
 body.video-page {
   min-height: 100vh;
