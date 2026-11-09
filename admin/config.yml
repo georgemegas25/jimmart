@@ -1,0 +1,33 @@
+backend:
+  name: github
+  repo: georgemegas25/jimmart
+  branch: main
+
+media_folder: "media"
+public_folder: "/media"
+
+collections:
+  - name: "artworks"
+    label: "Artworks"
+    folder: "content/artworks"
+    create: true
+    extension: "md"
+    format: "json"
+    slug: "{{slug}}"
+    fields:
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Image", name: "image", widget: "image" }
+      - label: "Category"
+        name: "category"
+        widget: "select"
+        options:
+          - { label: "Paintings", value: "paintings" }
+          - { label: "Digital", value: "digital" }
+          - { label: "Posters", value: "posters" }
+          - { label: "Sculptures", value: "sculptures" }
+          - { label: "Installations", value: "installations" }
+          - { label: "Illustrations", value: "illustrations" }
+          - { label: "Videography", value: "video" }
+      - { label: "Dimensions", name: "dimensions", widget: "string", required: false }
+      - { label: "Series", name: "series", widget: "string", required: false }
+      - { label: "Materials", name: "materials", widget: "string", required: false }
