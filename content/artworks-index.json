@@ -1,1 +1,10 @@
-[]
+[
+  {
+    "name": "creature 5 ",
+    "image": "/media/creature (5).jpg",
+    "category": "paintings",
+    "dimensions": "500x500",
+    "series": "creature",
+    "materials": "ladi kai fotia"
+  }
+]
