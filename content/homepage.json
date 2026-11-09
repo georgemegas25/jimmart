@@ -1,7 +1,6 @@
-
 {
   "paintings": {
-    "left": "/images/paintings_p/body.jpg",
+    "left": "/media/creature (5)-1.jpg",
     "right": "/images/paintings_p/brand.jpg"
   },
   "digital": {
@@ -13,12 +12,8 @@
     "right": "/images/posters/antropocene (3).jpg"
   },
   "sculptures": {
-    "left": "/images/sculpture/creature (1).JPG",
-    "right": "/images/sculpture/creature (2).JPG"
-  },
-  "installations": {
-    "left": "/images/instalantion/P1040335.JPG",
-    "right": "/images/instalantion/P1040338.JPG"
+    "left": "/media/hands escaping (1).bmp",
+    "right": "/media/capturing plastic (1).jpeg"
   },
   "illustrations": {
     "left": "/images/illustration/map.jpg",
