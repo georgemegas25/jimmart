@@ -131,6 +131,7 @@ content:
             label: Right Image
             type: image
 
+  
   - name: artist_statement
     label: Artist Statement
     type: file
@@ -140,3 +141,19 @@ content:
       - name: text
         label: Statement Text
         type: text
+
+      - name: exhibitions
+        label: Exhibitions
+        type: object
+        list: true
+        fields:
+          - name: year
+            label: Year
+            type: string
+            required: true
+
+          - name: description
+            label: Exhibition Details
+            type: string
+            required: true
+
