@@ -1,0 +1,31 @@
+
+{
+  "paintings": {
+    "left": "/images/paintings_p/body.jpg",
+    "right": "/images/paintings_p/brand.jpg"
+  },
+  "digital": {
+    "left": "/images/digital/bloom.png",
+    "right": "/images/digital/blue s.jpg"
+  },
+  "posters": {
+    "left": "/images/posters/antropocene (1).jpg",
+    "right": "/images/posters/antropocene (3).jpg"
+  },
+  "sculptures": {
+    "left": "/images/sculpture/creature (1).JPG",
+    "right": "/images/sculpture/creature (2).JPG"
+  },
+  "installations": {
+    "left": "/images/instalantion/P1040335.JPG",
+    "right": "/images/instalantion/P1040338.JPG"
+  },
+  "illustrations": {
+    "left": "/images/illustration/map.jpg",
+    "right": "/images/illustration/mock up.jpg"
+  },
+  "video": {
+    "left": "/Film.png",
+    "right": "/Chalk.png"
+  }
+}
