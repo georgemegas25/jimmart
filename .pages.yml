@@ -1,0 +1,142 @@
+
+media:
+  input: media
+  output: /media
+
+content:
+  - name: artworks
+    label: Artworks
+    type: collection
+    path: content/artworks
+    format: json
+    fields:
+      - name: name
+        label: Name
+        type: string
+        required: true
+      - name: image
+        label: Image
+        type: image
+        required: true
+      - name: category
+        label: Category
+        type: select
+        required: true
+        options:
+          values:
+            - value: paintings
+              label: Paintings
+            - value: digital
+              label: Digital
+            - value: posters
+              label: Posters
+            - value: sculptures
+              label: Sculptures
+            - value: installations
+              label: Installations
+            - value: illustrations
+              label: Illustrations
+            - value: video
+              label: Videography
+      - name: dimensions
+        label: Dimensions
+        type: string
+      - name: series
+        label: Series
+        type: string
+      - name: materials
+        label: Materials
+        type: string
+
+  - name: homepage
+    label: Homepage Images
+    type: file
+    path: content/homepage.json
+    format: json
+    fields:
+      - name: paintings
+        label: Paintings
+        type: object
+        fields:
+          - name: left
+            label: Left Image
+            type: image
+          - name: right
+            label: Right Image
+            type: image
+
+      - name: digital
+        label: Digital
+        type: object
+        fields:
+          - name: left
+            label: Left Image
+            type: image
+          - name: right
+            label: Right Image
+            type: image
+
+      - name: posters
+        label: Posters
+        type: object
+        fields:
+          - name: left
+            label: Left Image
+            type: image
+          - name: right
+            label: Right Image
+            type: image
+
+      - name: sculptures
+        label: Sculptures
+        type: object
+        fields:
+          - name: left
+            label: Left Image
+            type: image
+          - name: right
+            label: Right Image
+            type: image
+
+      - name: installations
+        label: Installations
+        type: object
+        fields:
+          - name: left
+            label: Left Image
+            type: image
+          - name: right
+            label: Right Image
+            type: image
+
+      - name: illustrations
+        label: Illustrations
+        type: object
+        fields:
+          - name: left
+            label: Left Image
+            type: image
+          - name: right
+            label: Right Image
+            type: image
+
+      - name: video
+        label: Videography
+        type: object
+        fields:
+          - name: left
+            label: Left Image
+            type: image
+          - name: right
+            label: Right Image
+            type: image
+
+  - name: artist_statement
+    label: Artist Statement
+    type: file
+    path: content/artist-statement.json
+    format: json
+    fields:
+      - name: text
+        label: Statement Text
+        type: text
