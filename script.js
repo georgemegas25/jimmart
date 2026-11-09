@@ -186,3 +186,77 @@ async function loadArtistStatement() {
 }
 
 loadArtistStatement();
+
+/* ===== ARTWORKS FROM CMS ===== */
+
+async function loadArtworks() {
+  const categories = [
+    "paintings",
+    "digital",
+    "posters",
+    "sculptures",
+    "installations",
+    "illustrations",
+    "video"
+  ];
+
+  // Βρίσκουμε ποια gallery είναι ανοιχτή.
+  const category = categories.find(name =>
+    document.getElementById(`${name}-grid`)
+  );
+
+  if (!category) return;
+
+  const grid = document.getElementById(`${category}-grid`);
+
+  try {
+    const response = await fetch("content/artworks-index.json");
+
+    if (!response.ok) {
+      throw new Error("Artworks index not found");
+    }
+
+    const artworks = await response.json();
+
+    // Κρατάμε μόνο τα έργα της συγκεκριμένης gallery.
+    const filteredArtworks = artworks.filter(
+      artwork => artwork.category === category
+    );
+
+    grid.replaceChildren();
+
+    filteredArtworks.forEach(artwork => {
+      const card = document.createElement("div");
+      card.className = "artwork-card";
+
+      card.dataset.name = artwork.name || "";
+      card.dataset.dimensions = artwork.dimensions || "";
+      card.dataset.series = artwork.series || "";
+      card.dataset.materials = artwork.materials || "";
+
+      const image = document.createElement("img");
+
+      // Υποστήριξη εικόνων που ανεβαίνουν από το CMS.
+      const imagePath = artwork.image || "";
+      image.src = imagePath.startsWith("/")
+        ? "." + imagePath
+        : imagePath;
+
+      image.alt = artwork.name || "Artwork";
+      image.loading = "lazy";
+
+      const title = document.createElement("h3");
+      title.className = "artwork-title";
+      title.textContent = artwork.name || "";
+
+      card.appendChild(image);
+      card.appendChild(title);
+      grid.appendChild(card);
+    });
+
+  } catch (error) {
+    console.error("Artworks CMS:", error);
+  }
+}
+
+loadArtworks();
