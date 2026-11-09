@@ -996,10 +996,3 @@ body.video-page::before {
     font-size: 18px;
   }
 }
-/* Temporary homepage visibility fix */
-body:not([class]) .section.reveal {
-  opacity: 1 !important;
-  visibility: visible !important;
-  transform: none !important;
-  display: flex !important;
-}
