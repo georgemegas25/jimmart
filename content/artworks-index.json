@@ -5,6 +5,14 @@
     "category": "paintings"
   },
   {
+    "name": "circus creature",
+    "image": "/media/circus creature (2).jpg",
+    "category": "paintings",
+    "dimensions": "2x2",
+    "series": "who",
+    "materials": "damn"
+  },
+  {
     "name": "creature 5 ",
     "image": "/media/creature (5).jpg",
     "category": "paintings",
