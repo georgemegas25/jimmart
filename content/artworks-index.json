@@ -1,5 +1,10 @@
 [
   {
+    "name": "body n",
+    "image": "/media/body n.jpg",
+    "category": "paintings"
+  },
+  {
     "name": "creature 5 ",
     "image": "/media/creature (5).jpg",
     "category": "paintings",
