@@ -1,4 +1,5 @@
 
+
 name: Update Artworks Index
 
 on:
@@ -29,7 +30,12 @@ jobs:
 
           artworks = []
 
-          for file in sorted(Path("content/artworks").glob("*.json")):
+          folder = Path("content/artworks")
+
+          for file in sorted(folder.glob("*")):
+              if file.suffix.lower() not in (".json", ".md"):
+                  continue
+
               with file.open(encoding="utf-8") as f:
                   artwork = json.load(f)
 
@@ -57,3 +63,4 @@ jobs:
             git commit -m "Update artworks index"
             git push
           fi
+
