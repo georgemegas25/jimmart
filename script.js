@@ -142,3 +142,47 @@ async function loadHomepageImages() {
 }
 
 loadHomepageImages();
+
+/* ===== ARTIST STATEMENT FROM CMS ===== */
+
+async function loadArtistStatement() {
+  const statementElement = document.getElementById("cms-statement");
+  const exhibitionsElement = document.getElementById("cms-exhibitions");
+
+  // Εκτελείται μόνο στη σελίδα Artist Statement.
+  if (!statementElement || !exhibitionsElement) return;
+
+  try {
+    const response = await fetch("content/artist-statement.json");
+
+    if (!response.ok) {
+      throw new Error("Artist Statement CMS file not found");
+    }
+
+    const data = await response.json();
+
+    // Αλλάζουμε μόνο το κείμενο, όχι το HTML ή το CSS.
+    if (typeof data.text === "string") {
+      statementElement.textContent = data.text;
+    }
+
+    // Ενημερώνουμε τη λίστα των εκθέσεων.
+    if (Array.isArray(data.exhibitions)) {
+      exhibitionsElement.replaceChildren();
+
+      data.exhibitions.forEach(exhibition => {
+        const item = document.createElement("li");
+
+        item.textContent =
+          `${exhibition.year} — ${exhibition.description}`;
+
+        exhibitionsElement.appendChild(item);
+      });
+    }
+
+  } catch (error) {
+    console.error("Artist Statement CMS:", error);
+  }
+}
+
+loadArtistStatement();
