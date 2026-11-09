@@ -80,3 +80,65 @@ if (artworkLightbox) {
     }
   });
 }
+
+/* ===== HOMEPAGE IMAGES FROM CMS ===== */
+
+async function loadHomepageImages() {
+  const sections = [
+    "paintings",
+    "digital",
+    "posters",
+    "sculptures",
+    "installations",
+    "illustrations",
+    "video"
+  ];
+
+  const homepageSections = document.querySelectorAll(
+    ".section.reveal"
+  );
+
+  if (homepageSections.length !== sections.length) return;
+
+  try {
+    const response = await fetch("content/homepage.json");
+
+    if (!response.ok) {
+      throw new Error("Homepage CMS file not found");
+    }
+
+    const data = await response.json();
+
+    sections.forEach((category, index) => {
+      const section = homepageSections[index];
+      const images = data[category];
+
+      if (!images) return;
+
+      const leftImage = section.querySelector(".section-art.left img");
+      const rightImage = section.querySelector(".section-art.right img");
+
+      function getImagePath(path) {
+        if (!path) return null;
+
+        // Υποστηρίζει εικόνες από CMS και από το repository.
+        return path.startsWith("/")
+          ? "." + path
+          : path;
+      }
+
+      if (leftImage && images.left) {
+        leftImage.src = getImagePath(images.left);
+      }
+
+      if (rightImage && images.right) {
+        rightImage.src = getImagePath(images.right);
+      }
+    });
+
+  } catch (error) {
+    console.error("Homepage CMS:", error);
+  }
+}
+
+loadHomepageImages();
