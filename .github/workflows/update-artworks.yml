@@ -1,0 +1,58 @@
+
+name: Update Artworks Index
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "content/artworks/**"
+      - ".github/workflows/update-artworks.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  update-index:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Generate artworks index
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+
+          artworks = []
+
+          for file in sorted(Path("content/artworks").glob("*.json")):
+              with file.open(encoding="utf-8") as f:
+                  artwork = json.load(f)
+
+              artworks.append(artwork)
+
+          output = Path("content/artworks-index.json")
+          output.parent.mkdir(parents=True, exist_ok=True)
+
+          output.write_text(
+              json.dumps(artworks, ensure_ascii=False, indent=2) + "\n",
+              encoding="utf-8"
+          )
+
+          print(f"Indexed {len(artworks)} artworks")
+          PY
+
+      - name: Commit updated index
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add content/artworks-index.json
+
+          if ! git diff --cached --quiet; then
+            git commit -m "Update artworks index"
+            git push
+          fi
