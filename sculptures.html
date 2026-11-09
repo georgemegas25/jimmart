@@ -64,9 +64,33 @@
 <!-- Cursor + Lightbox -->
 <div class="cursor"></div>
 
-<div class="lightbox" id="lightbox">
-  <img src="" id="lightbox-img">
+
+<!-- ===== ARTWORK LIGHTBOX ===== -->
+
+<div class="artwork-lightbox" id="artwork-lightbox">
+
+  <div class="artwork-lightbox-content">
+
+    <button class="artwork-lightbox-close"
+            id="artwork-lightbox-close"
+            aria-label="Close">×</button>
+
+    <img class="artwork-lightbox-image"
+         id="artwork-lightbox-image"
+         src=""
+         alt="Artwork">
+
+    <div class="artwork-lightbox-info">
+      <p><strong>Name:</strong> <span id="artwork-name"></span></p>
+      <p><strong>Dimensions:</strong> <span id="artwork-dimensions"></span></p>
+      <p><strong>Series:</strong> <span id="artwork-series"></span></p>
+      <p><strong>Materials:</strong> <span id="artwork-materials"></span></p>
+    </div>
+
+  </div>
+
 </div>
+
 <!-- Τερατάκι Linktree -->
 <script src="script.js"></script>
  <a href="https://linktr.ee/Jimmakrr"
