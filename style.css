@@ -709,12 +709,9 @@ body.paintings-page::before {
 /* Paintings decorative background */
 
 body.paintings-page {
-  background-color: #FF1744;
-  background-image: url("./paint-decoration.png");
-  background-repeat: no-repeat;
-  background-position: center bottom;
-  background-size: 100% auto;
-  background-attachment: fixed;
+  min-height: 100vh;
+  background: #FF1744;
+  color: white;
 }
 /* ===== PAINTINGS GALLERY ===== */
 
