@@ -2,6 +2,8 @@ backend:
   name: github
   repo: georgemegas25/jimmart
   branch: main
+  base_url: https://jimmart-cms-auth.georgemegas25.workers.dev
+  auth_endpoint: auth
 
 media_folder: "media"
 public_folder: "/media"
