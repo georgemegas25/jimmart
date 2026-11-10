@@ -243,9 +243,14 @@ async function loadArtworks() {
 
       // Υποστήριξη εικόνων που ανεβαίνουν από το CMS.
       const imagePath = artwork.image || "";
-      image.src = imagePath.startsWith("/")
-        ? "." + imagePath
-        : imagePath;
+
+if (imagePath.startsWith("/jimmart/")) {
+  image.src = imagePath;
+} else if (imagePath.startsWith("/")) {
+  image.src = "." + imagePath;
+} else {
+  image.src = imagePath;
+}
 
       image.alt = artwork.name || "Artwork";
       image.loading = "lazy";
