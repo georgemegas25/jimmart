@@ -21,6 +21,11 @@
     "materials": "ladi kai fotia"
   },
   {
+    "image": "/jimmart/media/circus creature.jpg",
+    "name": "CIRCUS CREATURE",
+    "category": "paintings"
+  },
+  {
     "image": "media/creature-2-.jpg",
     "name": "creature (2)",
     "category": "paintings",
