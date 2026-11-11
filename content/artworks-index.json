@@ -25,5 +25,10 @@
     "name": "creature (2)",
     "category": "paintings",
     "dimensions": "6000x4000"
+  },
+  {
+    "image": "/jimmart/media/creature-3-.jpg",
+    "name": "creature (3)",
+    "category": "paintings"
   }
 ]
