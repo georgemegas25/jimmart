@@ -40,7 +40,9 @@ jobs:
                   continue
 
               with file.open(encoding="utf-8") as f:
-                  artworks.append(json.load(f))
+                  artwork = json.load(f)
+                  artwork["id"] = file.stem
+                  artworks.append(artwork)
 
           output = Path("content/artworks-index.json")
           output.parent.mkdir(parents=True, exist_ok=True)
