@@ -173,11 +173,10 @@ contactTrigger.addEventListener('click', function(event) {
 
   animateMonster();
 });
-</script>
-  
-<script>
+    /* ===== MOBILE MENU ===== */
 const mobileMenuButton = document.querySelector('.mobile-menu-toggle');
 const mobileNavigation = document.getElementById('mobile-navigation');
+const mobileContactTrigger = document.getElementById('mobile-contact-trigger');
 
 if (mobileMenuButton && mobileNavigation) {
   function closeMobileMenu() {
@@ -189,7 +188,10 @@ if (mobileMenuButton && mobileNavigation) {
   mobileMenuButton.addEventListener('click', () => {
     const isOpen = mobileNavigation.classList.toggle('is-open');
     mobileMenuButton.setAttribute('aria-expanded', String(isOpen));
-    mobileMenuButton.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+    mobileMenuButton.setAttribute(
+      'aria-label',
+      isOpen ? 'Close menu' : 'Open menu'
+    );
   });
 
   document.addEventListener('keydown', event => {
@@ -197,8 +199,10 @@ if (mobileMenuButton && mobileNavigation) {
   });
 
   document.addEventListener('click', event => {
-    if (!mobileNavigation.contains(event.target) &&
-        !mobileMenuButton.contains(event.target)) {
+    if (
+      !mobileNavigation.contains(event.target) &&
+      !mobileMenuButton.contains(event.target)
+    ) {
       closeMobileMenu();
     }
   });
@@ -208,17 +212,14 @@ if (mobileMenuButton && mobileNavigation) {
   });
 }
 
-const mobileContactTrigger = document.getElementById('mobile-contact-trigger');
-const desktopContactTrigger = document.getElementById('contact-trigger');
-
-if (mobileContactTrigger && desktopContactTrigger) {
+/* ===== MOBILE CONTACT ===== */
+if (mobileContactTrigger && contactTrigger) {
   mobileContactTrigger.addEventListener('click', event => {
     event.preventDefault();
-    desktopContactTrigger.click();
+    contactTrigger.click();
   });
 }
 </script>
-
 </body>
 </html>
 
