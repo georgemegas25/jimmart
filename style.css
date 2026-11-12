@@ -1007,3 +1007,112 @@ body.video-page::before {
   border: 2px solid white;
   box-sizing: border-box;
 }
+/* ===== MOBILE NAVIGATION ===== */
+
+/* Hidden on desktop */
+.mobile-menu-toggle,
+.mobile-navigation {
+  display: none;
+}
+
+@media (max-width: 700px) {
+
+  /* Compact navbar */
+  .navbar .nav-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 85px;
+    padding: 0 16px;
+  }
+
+  /* Hide desktop navigation */
+  .navbar .nav-left,
+  .navbar .nav-right {
+    display: none;
+  }
+
+  /* Keep the original logo centered */
+  .navbar .nav-logo {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 190px;
+    height: 80px;
+  }
+
+  /* Hamburger button */
+  .mobile-menu-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 20;
+    background: transparent;
+    border: 0;
+    padding: 12px;
+    cursor: pointer;
+  }
+
+  .mobile-menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: white;
+    border-radius: 2px;
+  }
+
+  /* Dropdown panel */
+  .mobile-navigation {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    max-height: calc(100dvh - 85px);
+    overflow-y: auto;
+    background: rgba(0, 0, 0, 0.96);
+    padding: 20px 25px;
+    z-index: 30;
+  }
+
+  .mobile-navigation.is-open {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .mobile-navigation a,
+  .mobile-navigation summary {
+    display: block;
+    color: white;
+    font-family: 'Starborn', cursive;
+    font-size: 15px;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .mobile-navigation details a {
+    padding: 12px 0 0 18px;
+    font-size: 13px;
+  }
+
+  /* Hide only homepage section images */
+  .section .section-art {
+    display: none;
+  }
+
+  /* Give section titles the available width */
+  .section .section-content {
+    width: 100%;
+  }
+
+  .section .section-content h2 {
+    font-size: clamp(32px, 9vw, 55px);
+  }
+}
