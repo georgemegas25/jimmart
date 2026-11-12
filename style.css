@@ -460,35 +460,6 @@ h1, h2, h3 {
   height: 65px;
   object-fit: contain;
 }
-
-/* MOBILE */
-
-@media (max-width: 700px) {
-  .navbar .nav-container {
-    grid-template-columns: 1fr;
-    padding-top: 90px;
-    gap: 12px;
-  }
-
-  .navbar .nav-logo {
-    top: 45px;
-    width: 190px;
-    height: 85px;
-  }
-
-  .navbar .nav-left,
-  .navbar .nav-right {
-    grid-column: 1;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 35px;
-  }
-
-  .navbar .nav-logo-image {
-    width: 90px;
-    height: 48px;
-  }
-}
 /* Fix spacing for new navbar */
 
 .navbar .nav-left li,
@@ -1102,31 +1073,27 @@ body.video-page::before {
     font-size: 13px;
   }
 
-  /* Hide only homepage section images */
-  .section .section-art {
-    display: none;
-  }
-  
-/* Keep brushstroke proportions on mobile */
+/* Homepage only */
+body:not(.paintings-page):not(.digital-page):not(.posters-page):not(.sculptures-page):not(.installations-page):not(.illustrations-page):not(.video-page):not(.bio-page) .section .section-art {
+  display: none;
+}
 
-.section::before {
+body:not(.paintings-page):not(.digital-page):not(.posters-page):not(.sculptures-page):not(.installations-page):not(.illustrations-page):not(.video-page):not(.bio-page) .section::before {
   background-image: url("mobile-brush.png");
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-
-.section .section-content {
+body:not(.paintings-page):not(.digital-page):not(.posters-page):not(.sculptures-page):not(.installations-page):not(.illustrations-page):not(.video-page):not(.bio-page) .section .section-content {
   width: 100%;
   max-width: 100%;
   padding: 0 12px;
 }
 
-.section .section-content h2 {
+body:not(.paintings-page):not(.digital-page):not(.posters-page):not(.sculptures-page):not(.installations-page):not(.illustrations-page):not(.video-page):not(.bio-page) .section .section-content h2 {
   font-size: clamp(26px, 7vw, 42px);
   overflow-wrap: anywhere;
 }
-
 
 }
