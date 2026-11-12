@@ -76,7 +76,7 @@ collections:
                 value_field: "{{slug}}"
                 filters:
                   - field: "category"
-                    value: "paintings"
+                    values: ["paintings"]
               - label: "Right Artwork"
                 name: "right"
                 widget: "relation"
@@ -86,7 +86,7 @@ collections:
                 value_field: "{{slug}}"
                 filters:
                   - field: "category"
-                    value: "paintings"
+                    values: ["paintings"]
               
           - label: "Digital"
             name: "digital"
@@ -101,7 +101,7 @@ collections:
                 value_field: "{{slug}}"
                 filters:
                   - field: "category"
-                    value: "digital"
+                    values: ["digital"]
               - label: "Right Artwork"
                 name: "right"
                 widget: "relation"
@@ -111,7 +111,7 @@ collections:
                 value_field: "{{slug}}"
                 filters:
                   - field: "category"
-                    value: "digital"
+                    values: ["digital"]
 
           - label: "Posters"
             name: "posters"
@@ -126,7 +126,7 @@ collections:
                 value_field: "{{slug}}"
                 filters:
                   - field: "category"
-                    value: "posters"
+                    values: ["posters"]
               - label: "Right Artwork"
                 name: "right"
                 widget: "relation"
@@ -136,7 +136,7 @@ collections:
                 value_field: "{{slug}}"
                 filters:
                   - field: "category"
-                    value: "posters"
+                    values: ["posters"]
 
           - label: "Sculptures"
             name: "sculptures"
@@ -151,7 +151,7 @@ collections:
                 value_field: "{{slug}}"
                 filters:
                   - field: "category"
-                    value: "sculptures"
+                    values: ["sculptures"]
               - label: "Right Artwork"
                 name: "right"
                 widget: "relation"
@@ -161,7 +161,7 @@ collections:
                 value_field: "{{slug}}"
                 filters:
                   - field: "category"
-                    value: "sculptures"
+                    values: ["sculptures"]
 
           - label: "Installations"
             name: "installations"
@@ -176,7 +176,7 @@ collections:
                 value_field: "{{slug}}"
                 filters:
                   - field: "category"
-                    value: "installations"
+                    values: ["installations"]
               - label: "Right Artwork"
                 name: "right"
                 widget: "relation"
@@ -186,7 +186,7 @@ collections:
                 value_field: "{{slug}}"
                 filters:
                   - field: "category"
-                    value: "installations"
+                    values: ["installations"]
 
           - label: "Illustrations"
             name: "illustrations"
@@ -201,7 +201,7 @@ collections:
                 value_field: "{{slug}}"
                 filters:
                   - field: "category"
-                    value: "illustrations"
+                    values: ["illustrations"]
               - label: "Right Artwork"
                 name: "right"
                 widget: "relation"
@@ -211,7 +211,7 @@ collections:
                 value_field: "{{slug}}"
                 filters:
                   - field: "category"
-                    value: "illustrations"
+                    values: ["illustrations"]
 
           - label: "Videography"
             name: "video"
@@ -226,7 +226,7 @@ collections:
                 value_field: "{{slug}}"
                 filters:
                   - field: "category"
-                    value: "video"
+                    values: ["video"]
               - label: "Right Artwork"
                 name: "right"
                 widget: "relation"
@@ -236,4 +236,4 @@ collections:
                 value_field: "{{slug}}"
                 filters:
                   - field: "category"
-                    value: "video"
+                    values: ["video"]
