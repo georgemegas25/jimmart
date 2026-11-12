@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
 /* Reset */
 * {
   margin: 0;
@@ -761,8 +762,9 @@ body.paintings-page {
 /* ===== ARTWORK TITLES ===== */
 
 .artwork-title {
-  font-family: 'Leckerli One', cursive;
+  font-family: 'Courgette', cursive;
   font-size: 38px;
+  font-weight: 400;
   color: white;
   text-align: center;
   margin-top: 12px;
