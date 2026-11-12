@@ -2,7 +2,8 @@
   {
     "name": "body n",
     "image": "/media/body n.jpg",
-    "category": "paintings"
+    "category": "paintings",
+    "id": "2026-11-09-body-n"
   },
   {
     "name": "circus creature",
@@ -10,7 +11,8 @@
     "category": "paintings",
     "dimensions": "2x2",
     "series": "who",
-    "materials": "damn"
+    "materials": "damn",
+    "id": "2026-11-09-circus-creature"
   },
   {
     "name": "creature 5 ",
@@ -18,22 +20,26 @@
     "category": "paintings",
     "dimensions": "500x500",
     "series": "creature",
-    "materials": "ladi kai fotia"
+    "materials": "ladi kai fotia",
+    "id": "2026-11-09-creature-5"
   },
   {
     "image": "/jimmart/media/circus creature.jpg",
     "name": "CIRCUS CREATURE",
-    "category": "paintings"
+    "category": "paintings",
+    "id": "map-image-jimmart-media-circus-creature-jpg-name-circus-creature-category-paintings"
   },
   {
     "image": "media/creature-2-.jpg",
     "name": "creature (2)",
     "category": "paintings",
-    "dimensions": "6000x4000"
+    "dimensions": "6000x4000",
+    "id": "map-image-jimmart-media-creature-2-jpg-name-creature-2-category-paintings-dimensions-6000x4000"
   },
   {
     "image": "/jimmart/media/creature-3-.jpg",
     "name": "creature (3)",
-    "category": "paintings"
+    "category": "paintings",
+    "id": "map-image-jimmart-media-creature-3-jpg-name-creature-3-category-paintings"
   }
 ]
