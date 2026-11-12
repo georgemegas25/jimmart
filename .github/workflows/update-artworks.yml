@@ -40,6 +40,7 @@ jobs:
               with file.open(encoding="utf-8") as f:
                   artwork = json.load(f)
 
+              artwork["id"] = file.stem
               artworks.append(artwork)
 
           output = Path("content/artworks-index.json")
