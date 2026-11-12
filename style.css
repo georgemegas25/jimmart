@@ -1022,7 +1022,7 @@ body.video-page::before {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 85px;
+    min-height: 70px;
     padding: 0 16px;
   }
 
@@ -1076,7 +1076,7 @@ body.video-page::before {
     width: 100%;
     max-height: calc(100dvh - 85px);
     overflow-y: auto;
-    background: rgba(0, 0, 0, 0.96);
+    background: inherit;
     padding: 20px 25px;
     z-index: 30;
   }
