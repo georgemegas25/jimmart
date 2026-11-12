@@ -1015,7 +1015,7 @@ body.video-page::before {
   display: none;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 900px) {
 
   /* Compact navbar */
   .navbar .nav-container {
@@ -1110,10 +1110,12 @@ body.video-page::before {
 /* Keep brushstroke proportions on mobile */
 
 .section::before {
-  background-size: 100% auto;
+  background-image: url("mobile-brush.png");
+  background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
 }
+
 
 .section .section-content {
   width: 100%;
