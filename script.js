@@ -86,67 +86,84 @@ if (artworkLightbox) {
   });
 }
 
-/* ===== HOMEPAGE IMAGES FROM CMS ===== */
 
+/* ===== HOMEPAGE IMAGES FROM CMS ===== */
 async function loadHomepageImages() {
-  const sections = [
-    "paintings",
-    "digital",
-    "posters",
-    "sculptures",
-    "installations",
-    "illustrations",
-    "video"
+  const categories = [
+    "paintings", "digital", "posters", "sculptures",
+    "installations", "illustrations", "video"
   ];
 
-  const homepageSections = document.querySelectorAll(
-    ".section.reveal"
-  );
+  const sections = document.querySelectorAll(".section.reveal");
+  if (sections.length !== categories.length) return;
 
-  if (homepageSections.length !== sections.length) return;
+  function imageUrl(path) {
+    if (!path) return "";
+    if (path.startsWith("/jimmart/")) return path;
+    if (path.startsWith("/")) return "." + path;
+    return path;
+  }
 
   try {
-    const response = await fetch("content/homepage.json");
+    const [homepageResponse, artworksResponse] = await Promise.all([
+      fetch("content/homepage.json"),
+      fetch("content/artworks-index.json")
+    ]);
 
-    if (!response.ok) {
-      throw new Error("Homepage CMS file not found");
+    if (!homepageResponse.ok || !artworksResponse.ok) {
+      throw new Error("Homepage or artworks data not found");
     }
 
-    const data = await response.json();
+    const homepage = await homepageResponse.json();
+    const artworks = await artworksResponse.json();
 
-    sections.forEach((category, index) => {
-      const section = homepageSections[index];
-      const images = data[category];
+    categories.forEach((category, index) => {
+      const section = sections[index];
+      const selections = homepage[category];
+      if (!selections) return;
 
-      if (!images) return;
+      ["left", "right"].forEach(side => {
+        const container = section.querySelector(`.section-art.${side}`);
+        const image = container?.querySelector("img");
+        const selected = selections[side];
 
-      const leftImage = section.querySelector(".section-art.left img");
-      const rightImage = section.querySelector(".section-art.right img");
+        if (!image || !selected) return;
 
-      function getImagePath(path) {
-        if (!path) return null;
+        // Find artwork by its saved reference.
+        const artwork = artworks.find(item =>
+          item.category === category &&
+          (
+            item.id === selected ||
+            item.slug === selected ||
+            item.image === selected
+          )
+        );
 
-        // Υποστηρίζει εικόνες από CMS και από το repository.
-        return path.startsWith("/")
-          ? "." + path
-          : path;
-      }
+        if (artwork) {
+          image.src = imageUrl(artwork.image);
+          image.alt = artwork.name || "Artwork";
 
-      if (leftImage && images.left) {
-        leftImage.src = getImagePath(images.left);
-      }
-
-      if (rightImage && images.right) {
-        rightImage.src = getImagePath(images.right);
-      }
+          container.dataset.name = artwork.name || "";
+          container.dataset.dimensions = artwork.dimensions || "";
+          container.dataset.series = artwork.series || "";
+          container.dataset.materials = artwork.materials || "";
+        } else if (
+          selected.startsWith("/") ||
+          selected.startsWith("images/") ||
+          selected.startsWith("media/")
+        ) {
+          // Keep supporting the existing homepage image paths.
+          image.src = imageUrl(selected);
+        }
+      });
     });
-
   } catch (error) {
     console.error("Homepage CMS:", error);
   }
 }
 
 loadHomepageImages();
+
 
 /* ===== ARTIST STATEMENT FROM CMS ===== */
 
