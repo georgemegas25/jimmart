@@ -588,31 +588,62 @@ body.bio-page {
   margin-top: 55px;
 }
 
-/* MOBILE */
+/* ===== ARTIST STATEMENT — MOBILE ===== */
 
 @media (max-width: 700px) {
+
+  body.bio-page {
+    background-size: auto 100%;
+    background-position: center top;
+    background-repeat: repeat-x;
+    background-attachment: scroll;
+  }
+
   .bio-page .artist-statement {
-    margin-top: 120px;
-    padding: 0 10px;
+    margin: 110px auto 50px;
+    padding: 0 8px;
   }
 
   .bio-page .parchment {
-  min-height: 750px;
-  padding: 160px 45px 85px;
-}
+    width: 100%;
+    max-width: 500px;
+    min-height: 0;
+    background-size: 100% 100%;
+    padding: 145px 12% 95px;
+  }
 
   .bio-page .parchment-text h1 {
-    font-size: 38px;
+    font-size: clamp(25px, 7vw, 38px);
+    margin-bottom: 25px;
   }
 
   .bio-page .parchment-text p {
-    font-size: 24px;
+    font-size: clamp(15px, 4vw, 19px);
+    line-height: 1.5;
+    margin-bottom: 18px;
   }
 
   .bio-page .parchment-text .opening {
-    font-size: 26px;
+    font-size: clamp(17px, 4.5vw, 22px);
+    margin-bottom: 25px;
+  }
+
+  .bio-page .parchment-text .signature {
+    font-size: 28px;
+    margin-top: 30px;
+  }
+
+  .bio-page .art-list {
+    font-size: 17px;
+    line-height: 1.5;
+  }
+
+  .bio-page .art-list li {
+    padding-left: 20px;
+    margin-bottom: 12px;
   }
 }
+
 /* ARTISTIC EXHIBITION LIST */
 
 .bio-page .art-list {
