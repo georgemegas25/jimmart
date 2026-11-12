@@ -1022,7 +1022,7 @@ body.video-page::before {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 65px;
+    min-height: 69px;
     padding: 0 16px;
   }
 
@@ -1108,8 +1108,23 @@ body.video-page::before {
   }
   
 /* Keep brushstroke proportions on mobile */
+
 .section::before {
-  background-size: contain;
+  background-size: 100% auto;
+  background-position: center;
+  background-repeat: no-repeat;
 }
+
+.section .section-content {
+  width: 100%;
+  max-width: 100%;
+  padding: 0 12px;
+}
+
+.section .section-content h2 {
+  font-size: clamp(26px, 7vw, 42px);
+  overflow-wrap: anywhere;
+}
+
 
 }
