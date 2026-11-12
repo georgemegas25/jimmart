@@ -33,3 +33,23 @@ collections:
       - { label: "Dimensions", name: "dimensions", widget: "string", required: false }
       - { label: "Series", name: "series", widget: "string", required: false }
       - { label: "Materials", name: "materials", widget: "string", required: false }
+
+
+  - name: "artist_statement"
+    label: "Artist Statement"
+    files:
+      - label: "Artist Statement & Exhibitions"
+        name: "bio"
+        file: "content/bio.json"
+        format: "json"
+        fields:
+          - label: "Artist Statement"
+            name: "statement"
+            widget: "text"
+          - label: "Exhibitions"
+            name: "exhibitions"
+            widget: "list"
+            field:
+              label: "Exhibition"
+              name: "item"
+              widget: "string"
