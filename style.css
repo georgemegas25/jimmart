@@ -1022,7 +1022,7 @@ body.video-page::before {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 60px;
+    min-height: 65px;
     padding: 0 16px;
   }
 
@@ -1106,4 +1106,10 @@ body.video-page::before {
   .section .section-art {
     display: none;
   }
+  
+/* Keep brushstroke proportions on mobile */
+.section::before {
+  background-size: contain;
+}
+
 }
