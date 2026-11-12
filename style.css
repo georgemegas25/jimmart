@@ -1012,7 +1012,10 @@ body.video-page::before {
     width: 190px;
     height: 80px;
   }
-
+   .navbar .nav-logo-image {
+     width: 90px;
+     height: 48px;
+  }
   /* Hamburger button */
   .mobile-menu-toggle {
     display: flex;
