@@ -70,6 +70,7 @@ collections:
               - label: "Left Artwork"
                 name: "left"
                 widget: "relation"
+                required: false
                 collection: "artworks"
                 search_fields: ["name"]
                 display_fields: ["name"]
@@ -80,6 +81,7 @@ collections:
               - label: "Right Artwork"
                 name: "right"
                 widget: "relation"
+                required: false
                 collection: "artworks"
                 search_fields: ["name"]
                 display_fields: ["name"]
@@ -95,6 +97,7 @@ collections:
               - label: "Left Artwork"
                 name: "left"
                 widget: "relation"
+                required: false
                 collection: "artworks"
                 search_fields: ["name"]
                 display_fields: ["name"]
@@ -105,6 +108,7 @@ collections:
               - label: "Right Artwork"
                 name: "right"
                 widget: "relation"
+                required: false
                 collection: "artworks"
                 search_fields: ["name"]
                 display_fields: ["name"]
@@ -120,6 +124,7 @@ collections:
               - label: "Left Artwork"
                 name: "left"
                 widget: "relation"
+                required: false
                 collection: "artworks"
                 search_fields: ["name"]
                 display_fields: ["name"]
@@ -130,6 +135,7 @@ collections:
               - label: "Right Artwork"
                 name: "right"
                 widget: "relation"
+                required: false
                 collection: "artworks"
                 search_fields: ["name"]
                 display_fields: ["name"]
@@ -145,6 +151,7 @@ collections:
               - label: "Left Artwork"
                 name: "left"
                 widget: "relation"
+                required: false
                 collection: "artworks"
                 search_fields: ["name"]
                 display_fields: ["name"]
@@ -155,6 +162,7 @@ collections:
               - label: "Right Artwork"
                 name: "right"
                 widget: "relation"
+                required: false
                 collection: "artworks"
                 search_fields: ["name"]
                 display_fields: ["name"]
@@ -170,6 +178,7 @@ collections:
               - label: "Left Artwork"
                 name: "left"
                 widget: "relation"
+                required: false
                 collection: "artworks"
                 search_fields: ["name"]
                 display_fields: ["name"]
@@ -180,6 +189,7 @@ collections:
               - label: "Right Artwork"
                 name: "right"
                 widget: "relation"
+                required: false
                 collection: "artworks"
                 search_fields: ["name"]
                 display_fields: ["name"]
@@ -195,6 +205,7 @@ collections:
               - label: "Left Artwork"
                 name: "left"
                 widget: "relation"
+                required: false
                 collection: "artworks"
                 search_fields: ["name"]
                 display_fields: ["name"]
@@ -205,6 +216,7 @@ collections:
               - label: "Right Artwork"
                 name: "right"
                 widget: "relation"
+                required: false
                 collection: "artworks"
                 search_fields: ["name"]
                 display_fields: ["name"]
@@ -220,6 +232,7 @@ collections:
               - label: "Left Artwork"
                 name: "left"
                 widget: "relation"
+                required: false
                 collection: "artworks"
                 search_fields: ["name"]
                 display_fields: ["name"]
@@ -230,6 +243,7 @@ collections:
               - label: "Right Artwork"
                 name: "right"
                 widget: "relation"
+                required: false
                 collection: "artworks"
                 search_fields: ["name"]
                 display_fields: ["name"]
