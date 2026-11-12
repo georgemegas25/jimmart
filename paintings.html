@@ -2,6 +2,7 @@
 <html lang="el">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home</title>
 
   <!-- Google Fonts -->
@@ -13,7 +14,14 @@
   
 <nav class="navbar">
   <div class="nav-container">
-
+<button class="mobile-menu-toggle" type="button"
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="mobile-navigation">
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
     <!-- LEFT MENU -->
     <ul class="nav-links nav-left">
       <li><a href="index.html">Home</a></li>
@@ -52,6 +60,25 @@
     </ul>
 
   </div>
+  
+<div class="mobile-navigation" id="mobile-navigation">
+  <a href="index.html">Home</a>
+
+  <details>
+    <summary>Artworks</summary>
+    <a href="paintings.html">Paintings</a>
+    <a href="digital.html">Digital</a>
+    <a href="posters.html">Posters</a>
+    <a href="sculptures.html">Sculptures</a>
+    <a href="installations.html">Installations</a>
+    <a href="illustrations.html">Illustrations</a>
+    <a href="video.html">Videography</a>
+  </details>
+
+  <a href="bio.html">Artist Statement</a>
+  <a href="#" id="mobile-contact-trigger">Contact</a>
+</div>
+
 </nav>
 <main class="paintings-gallery">
 
@@ -147,6 +174,51 @@ contactTrigger.addEventListener('click', function(event) {
   animateMonster();
 });
 </script>
+  
+<script>
+const mobileMenuButton = document.querySelector('.mobile-menu-toggle');
+const mobileNavigation = document.getElementById('mobile-navigation');
+
+if (mobileMenuButton && mobileNavigation) {
+  function closeMobileMenu() {
+    mobileNavigation.classList.remove('is-open');
+    mobileMenuButton.setAttribute('aria-expanded', 'false');
+    mobileMenuButton.setAttribute('aria-label', 'Open menu');
+  }
+
+  mobileMenuButton.addEventListener('click', () => {
+    const isOpen = mobileNavigation.classList.toggle('is-open');
+    mobileMenuButton.setAttribute('aria-expanded', String(isOpen));
+    mobileMenuButton.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+  });
+
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape') closeMobileMenu();
+  });
+
+  document.addEventListener('click', event => {
+    if (!mobileNavigation.contains(event.target) &&
+        !mobileMenuButton.contains(event.target)) {
+      closeMobileMenu();
+    }
+  });
+
+  mobileNavigation.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', closeMobileMenu);
+  });
+}
+
+const mobileContactTrigger = document.getElementById('mobile-contact-trigger');
+const desktopContactTrigger = document.getElementById('contact-trigger');
+
+if (mobileContactTrigger && desktopContactTrigger) {
+  mobileContactTrigger.addEventListener('click', event => {
+    event.preventDefault();
+    desktopContactTrigger.click();
+  });
+}
+</script>
+
 </body>
 </html>
 
