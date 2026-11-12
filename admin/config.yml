@@ -35,21 +35,22 @@ collections:
       - { label: "Materials", name: "materials", widget: "string", required: false }
 
 
+  
   - name: "artist_statement"
     label: "Artist Statement"
     files:
       - label: "Artist Statement & Exhibitions"
         name: "bio"
-        file: "content/bio.json"
+        file: "content/artist-statement.json"
         format: "json"
         fields:
           - label: "Artist Statement"
-            name: "statement"
+            name: "text"
             widget: "text"
           - label: "Exhibitions"
             name: "exhibitions"
             widget: "list"
-            field:
-              label: "Exhibition"
-              name: "item"
-              widget: "string"
+            fields:
+              - { label: "Year", name: "year", widget: "string" }
+              - { label: "Description", name: "description", widget: "string" }
+
