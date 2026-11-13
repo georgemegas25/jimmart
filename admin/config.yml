@@ -17,8 +17,24 @@ collections:
     format: "json"
     slug: "{{slug}}"
     fields:
+      
       - { label: "Name", name: "name", widget: "string" }
-      - { label: "Image", name: "image", widget: "image" }
+
+      - label: "Image"
+        name: "image"
+        widget: "image"
+        required: false
+
+      - label: "Video (MP4)"
+        name: "video_file"
+        widget: "file"
+        required: false
+        media_folder: "/media"
+        public_folder: "/jimmart/media"
+        media_library:
+          config:
+            multiple: false
+
       - label: "Category"
         name: "category"
         widget: "select"
