@@ -41,5 +41,11 @@
     "name": "creature (3)",
     "category": "paintings",
     "id": "map-image-jimmart-media-creature-3-jpg-name-creature-3-category-paintings"
+  },
+  {
+    "name": "test",
+    "video_file": "/jimmart/media/mov_0102.mp4",
+    "category": "video",
+    "id": "map-name-test-video_file-jimmart-media-mov_0102-mp4-category-video"
   }
 ]
