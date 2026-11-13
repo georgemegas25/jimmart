@@ -363,19 +363,37 @@ async function loadArtworks() {
       card.dataset.series = artwork.series || "";
       card.dataset.materials = artwork.materials || "";
 
-      const image = document.createElement("img");
+      
+if (category === "video" && artwork.video_file) {
+  // Video player for Videography
+  const video = document.createElement("video");
 
-      image.src = artworkImageUrl(artwork.image);
-      image.alt = artwork.name || "Artwork";
-      image.loading = "lazy";
+  video.src = artworkImageUrl(artwork.video_file);
+  video.controls = true;
+  video.preload = "metadata";
+  video.playsInline = true;
+  video.className = "artwork-video";
 
-      const title = document.createElement("h3");
-      title.className = "artwork-title";
-      title.textContent = artwork.name || "";
+  card.appendChild(video);
 
-      card.appendChild(image);
-      card.appendChild(title);
-      grid.appendChild(card);
+} else if (artwork.image) {
+  // Keep existing images for all other artworks
+  const image = document.createElement("img");
+
+  image.src = artworkImageUrl(artwork.image);
+  image.alt = artwork.name || "Artwork";
+  image.loading = "lazy";
+
+  card.appendChild(image);
+}
+
+const title = document.createElement("h3");
+title.className = "artwork-title";
+title.textContent = artwork.name || "";
+
+card.appendChild(title);
+grid.appendChild(card);
+
     });
 
   } catch (error) {
