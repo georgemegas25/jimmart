@@ -613,7 +613,31 @@ body.bio-page {
   text-align: right;
   margin-top: 55px;
 }
+/* ARTISTIC EXHIBITION LIST */
 
+.bio-page .art-list {
+  list-style: none;
+  padding-left: 15px;
+  margin: 0 0 35px;
+
+  font-family: 'Grenze Gotisch', serif;
+  font-size: 29px;
+  line-height: 1.5;
+  color: #442817;
+}
+
+.bio-page .art-list li {
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 18px;
+}
+
+.bio-page .art-list li::before {
+  content: "✦";
+  position: absolute;
+  left: 0;
+  color: #8b5a32;
+}
 /* ===== ARTIST STATEMENT — MOBILE ===== */
 
 @media (max-width: 700px) {
@@ -629,8 +653,6 @@ body.bio-page {
     margin: 110px auto 50px;
     padding: 0 8px;
   }
-
-  
 
 .bio-page .parchment {
   width: 100%;
@@ -648,8 +670,6 @@ body.bio-page {
   padding: 0 12%;
   box-sizing: border-box;
 }
-
-
 
   .bio-page .parchment-text h1 {
     font-size: clamp(25px, 7vw, 38px);
@@ -684,32 +704,6 @@ body.bio-page {
   overflow-wrap: break-word;
 }
 
-}
-
-/* ARTISTIC EXHIBITION LIST */
-
-.bio-page .art-list {
-  list-style: none;
-  padding-left: 15px;
-  margin: 0 0 35px;
-
-  font-family: 'Grenze Gotisch', serif;
-  font-size: 29px;
-  line-height: 1.5;
-  color: #442817;
-}
-
-.bio-page .art-list li {
-  position: relative;
-  padding-left: 30px;
-  margin-bottom: 18px;
-}
-
-.bio-page .art-list li::before {
-  content: "✦";
-  position: absolute;
-  left: 0;
-  color: #8b5a32;
 }
 /* Κάθε νέο τερατάκι */
 
