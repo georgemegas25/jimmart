@@ -784,6 +784,17 @@ body.paintings-page {
 }
 
 
+/* VIDEOGRAPHY PLAYERS */
+.video-page .artwork-video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  background: #000;
+  border: 5px solid white;
+  border-radius: 8px;
+}
+
 /* Tablet */
 @media (max-width: 1000px) {
   .artworks-grid {
