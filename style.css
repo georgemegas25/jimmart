@@ -605,15 +605,24 @@ body.bio-page {
   }
 
   
+
 .bio-page .parchment {
   width: 100%;
   max-width: 500px;
-  min-height: 0;
-  background-size: 100% auto;
-  background-position: center top;
-  background-repeat: no-repeat;
-  padding: 145px 12% 95px;
+  min-height: 750px;
+
+  border-style: solid;
+  border-width: 145px 0 95px;
+  border-image-source: url("./Scroll 1.png");
+  border-image-slice: 25% 0 20% fill;
+  border-image-width: 145px 0 95px;
+  border-image-repeat: stretch;
+
+  background: none;
+  padding: 0 12%;
+  box-sizing: border-box;
 }
+
 
 
   .bio-page .parchment-text h1 {
@@ -636,9 +645,8 @@ body.bio-page {
     font-size: 28px;
     margin-top: 30px;
   }
-  
 .bio-page .art-list {
-  font-size: 17px;
+  font-size: clamp(15px, 4vw, 19px);
   line-height: 1.5;
   padding-left: 0;
   margin-bottom: 25px;
@@ -649,6 +657,7 @@ body.bio-page {
   margin-bottom: 12px;
   overflow-wrap: break-word;
 }
+
 }
 
 /* ARTISTIC EXHIBITION LIST */
