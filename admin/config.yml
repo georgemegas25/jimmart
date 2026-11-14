@@ -55,6 +55,7 @@ collections:
       - { label: "Dimensions", name: "dimensions", widget: "string", required: false }
       - { label: "Series", name: "series", widget: "string", required: false }
       - { label: "Materials", name: "materials", widget: "string", required: false }
+      - { label: "Year", name: "year", widget: "string", required: false }
 
 
   
