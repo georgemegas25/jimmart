@@ -795,6 +795,18 @@ body.paintings-page {
   border-radius: 8px;
 }
 
+/* YOUTUBE PLAYER — VIDEOGRAPHY ONLY */
+.video-page iframe.artwork-video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  box-sizing: border-box;
+  border: 5px solid white;
+  border-radius: 8px;
+  background: #000;
+}
+
 /* Tablet */
 @media (max-width: 1000px) {
   .artworks-grid {
