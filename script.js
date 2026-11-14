@@ -364,8 +364,44 @@ async function loadArtworks() {
       card.dataset.materials = artwork.materials || "";
 
       
-if (category === "video" && artwork.video_file) {
-  // Video player for Videography
+if (category === "video" && artwork.youtube_url) {
+  // YouTube player for Videography
+  let videoId = "";
+
+  try {
+    const url = new URL(artwork.youtube_url);
+
+    if (["youtube.com", "www.youtube.com", "m.youtube.com"].includes(url.hostname)) {
+      if (url.pathname === "/watch") {
+        videoId = url.searchParams.get("v") || "";
+      } else if (url.pathname.startsWith("/shorts/") ||
+                 url.pathname.startsWith("/embed/") ||
+                 url.pathname.startsWith("/live/")) {
+        videoId = url.pathname.split("/")[2] || "";
+      }
+    } else if (url.hostname === "youtu.be" || url.hostname === "www.youtu.be") {
+      videoId = url.pathname.split("/")[1] || "";
+    }
+  } catch (error) {
+    console.warn("Invalid YouTube URL:", artwork.youtube_url);
+  }
+
+  if (/^[a-zA-Z0-9_-]{11}$/.test(videoId)) {
+    const iframe = document.createElement("iframe");
+
+    iframe.src = `https://www.youtube-nocookie.com/embed/${videoId}`;
+    iframe.title = artwork.name || "YouTube video";
+    iframe.className = "artwork-video";
+    iframe.loading = "lazy";
+    iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+    iframe.allowFullscreen = true;
+    iframe.style.border = "5px solid white";
+
+    card.appendChild(iframe);
+  }
+
+} else if (category === "video" && artwork.video_file) {
+  // Existing MP4 player
   const video = document.createElement("video");
 
   video.src = artworkImageUrl(artwork.video_file);
@@ -377,7 +413,7 @@ if (category === "video" && artwork.video_file) {
   card.appendChild(video);
 
 } else if (artwork.image) {
-  // Keep existing images for all other artworks
+  // Existing image display
   const image = document.createElement("img");
 
   image.src = artworkImageUrl(artwork.image);
