@@ -90,6 +90,9 @@ if (artworkLightbox) {
     document.getElementById("artwork-materials").textContent =
       card.dataset.materials || "—";
 
+    document.getElementById("artwork-year").textContent =
+      card.dataset.year || "—";
+
     artworkLightbox.classList.add("active");
     document.body.style.overflow = "hidden";
   });
@@ -218,6 +221,7 @@ async function loadHomepageImages() {
         container.dataset.dimensions = "";
         container.dataset.series = "";
         container.dataset.materials = "";
+        container.dataset.year = "";
 
         if (
           typeof selected !== "string" ||
@@ -245,6 +249,7 @@ async function loadHomepageImages() {
           container.dataset.dimensions = artwork.dimensions || "";
           container.dataset.series = artwork.series || "";
           container.dataset.materials = artwork.materials || "";
+          container.dataset.year = artwork.year || "";
 
           return;
         }
@@ -362,6 +367,7 @@ async function loadArtworks() {
       card.dataset.dimensions = artwork.dimensions || "";
       card.dataset.series = artwork.series || "";
       card.dataset.materials = artwork.materials || "";
+      card.dataset.year = artwork.year || "";
 
       
 if (category === "video" && artwork.youtube_url) {
