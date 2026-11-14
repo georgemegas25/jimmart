@@ -35,6 +35,12 @@ collections:
           config:
             multiple: false
 
+       - label: "YouTube Video URL"
+         name: "youtube_url"
+         widget: "string"
+         required: false
+         hint: "Paste a YouTube video link here (Unlisted or Public)."
+          
       - label: "Category"
         name: "category"
         widget: "select"
