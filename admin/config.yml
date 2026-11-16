@@ -1,276 +1,355 @@
+# JimMart Decap CMS — Artworks grouped by category
+# In Artworks, choose Group by > Category to see category sections.
 backend:
   name: github
   repo: georgemegas25/jimmart
   branch: main
   base_url: https://jimmart-cms-auth.georgemegas25.workers.dev
   auth_endpoint: auth
-
-media_folder: "media"
-public_folder: "/jimmart/media"
-
+media_folder: media
+public_folder: /jimmart/media
 collections:
-  - name: "artworks"
-    label: "Artworks"
-    folder: "content/artworks"
-    create: true
-    extension: "md"
-    format: "json"
-    slug: "{{slug}}"
+- name: artworks
+  label: Artworks
+  folder: content/artworks
+  create: true
+  extension: md
+  format: json
+  slug: '{{slug}}'
+  identifier_field: name
+  summary: '{{name}} — {{category}}'
+  view_groups:
+  - label: Category
+    field: category
+  view_filters:
+  - label: Paintings
+    field: category
+    pattern: ^paintings$
+  - label: Digital
+    field: category
+    pattern: ^digital$
+  - label: Posters
+    field: category
+    pattern: ^posters$
+  - label: Sculptures
+    field: category
+    pattern: ^sculptures$
+  - label: Installations
+    field: category
+    pattern: ^installations$
+  - label: Illustrations
+    field: category
+    pattern: ^illustrations$
+  - label: Videography
+    field: category
+    pattern: ^video$
+  fields:
+  - label: Name
+    name: name
+    widget: string
+  - label: Image
+    name: image
+    widget: image
+    required: false
+  - label: Video (MP4)
+    name: video_file
+    widget: file
+    required: false
+    media_folder: /media
+    public_folder: /jimmart/media
+    media_library:
+      config:
+        multiple: false
+  - label: YouTube Video URL
+    name: youtube_url
+    widget: string
+    required: false
+    hint: Paste a YouTube video link here (Unlisted or Public).
+  - label: Category
+    name: category
+    widget: select
+    options:
+    - label: Paintings
+      value: paintings
+    - label: Digital
+      value: digital
+    - label: Posters
+      value: posters
+    - label: Sculptures
+      value: sculptures
+    - label: Installations
+      value: installations
+    - label: Illustrations
+      value: illustrations
+    - label: Videography
+      value: video
+  - label: Dimensions
+    name: dimensions
+    widget: string
+    required: false
+  - label: Series
+    name: series
+    widget: string
+    required: false
+  - label: Materials
+    name: materials
+    widget: string
+    required: false
+  - label: Year
+    name: year
+    widget: string
+    required: false
+- name: artist_statement
+  label: Artist Statement
+  files:
+  - label: Artist Statement & Exhibitions
+    name: bio
+    file: content/artist-statement.json
+    format: json
     fields:
-      
-      - { label: "Name", name: "name", widget: "string" }
-
-      - label: "Image"
-        name: "image"
-        widget: "image"
+    - label: Artist Statement
+      name: text
+      widget: text
+    - label: Exhibitions
+      name: exhibitions
+      widget: list
+      fields:
+      - label: Year
+        name: year
+        widget: string
+      - label: Description
+        name: description
+        widget: string
+- name: homepage
+  label: Homepage
+  files:
+  - label: Homepage Artworks
+    name: homepage
+    file: content/homepage.json
+    format: json
+    fields:
+    - label: Paintings
+      name: paintings
+      widget: object
+      fields:
+      - label: Left Artwork
+        name: left
+        widget: relation
         required: false
-
-      - label: "Video (MP4)"
-        name: "video_file"
-        widget: "file"
+        collection: artworks
+        search_fields:
+        - name
+        display_fields:
+        - name
+        value_field: '{{slug}}'
+        filters:
+        - field: category
+          values:
+          - paintings
+      - label: Right Artwork
+        name: right
+        widget: relation
         required: false
-        media_folder: "/media"
-        public_folder: "/jimmart/media"
-        media_library:
-          config:
-            multiple: false
-
-      - label: "YouTube Video URL"
-        name: "youtube_url"
-        widget: "string"
+        collection: artworks
+        search_fields:
+        - name
+        display_fields:
+        - name
+        value_field: '{{slug}}'
+        filters:
+        - field: category
+          values:
+          - paintings
+    - label: Digital
+      name: digital
+      widget: object
+      fields:
+      - label: Left Artwork
+        name: left
+        widget: relation
         required: false
-        hint: "Paste a YouTube video link here (Unlisted or Public)."
-          
-      - label: "Category"
-        name: "category"
-        widget: "select"
-        options:
-          - { label: "Paintings", value: "paintings" }
-          - { label: "Digital", value: "digital" }
-          - { label: "Posters", value: "posters" }
-          - { label: "Sculptures", value: "sculptures" }
-          - { label: "Installations", value: "installations" }
-          - { label: "Illustrations", value: "illustrations" }
-          - { label: "Videography", value: "video" }
-      - { label: "Dimensions", name: "dimensions", widget: "string", required: false }
-      - { label: "Series", name: "series", widget: "string", required: false }
-      - { label: "Materials", name: "materials", widget: "string", required: false }
-      - { label: "Year", name: "year", widget: "string", required: false }
+        collection: artworks
+        search_fields:
+        - name
+        display_fields:
+        - name
+        value_field: '{{slug}}'
+        filters:
+        - field: category
+          values:
+          - digital
+      - label: Right Artwork
+        name: right
+        widget: relation
+        required: false
+        collection: artworks
+        search_fields:
+        - name
+        display_fields:
+        - name
+        value_field: '{{slug}}'
+        filters:
+        - field: category
+          values:
+          - digital
+    - label: Posters
+      name: posters
+      widget: object
+      fields:
+      - label: Left Artwork
+        name: left
+        widget: relation
+        required: false
+        collection: artworks
+        search_fields:
+        - name
+        display_fields:
+        - name
+        value_field: '{{slug}}'
+        filters:
+        - field: category
+          values:
+          - posters
+      - label: Right Artwork
+        name: right
+        widget: relation
+        required: false
+        collection: artworks
+        search_fields:
+        - name
+        display_fields:
+        - name
+        value_field: '{{slug}}'
+        filters:
+        - field: category
+          values:
+          - posters
+    - label: Sculptures
+      name: sculptures
+      widget: object
+      fields:
+      - label: Left Artwork
+        name: left
+        widget: relation
+        required: false
+        collection: artworks
+        search_fields:
+        - name
+        display_fields:
+        - name
+        value_field: '{{slug}}'
+        filters:
+        - field: category
+          values:
+          - sculptures
+      - label: Right Artwork
+        name: right
+        widget: relation
+        required: false
+        collection: artworks
+        search_fields:
+        - name
+        display_fields:
+        - name
+        value_field: '{{slug}}'
+        filters:
+        - field: category
+          values:
+          - sculptures
+    - label: Installations
+      name: installations
+      widget: object
+      fields:
+      - label: Left Artwork
+        name: left
+        widget: relation
+        required: false
+        collection: artworks
+        search_fields:
+        - name
+        display_fields:
+        - name
+        value_field: '{{slug}}'
+        filters:
+        - field: category
+          values:
+          - installations
+      - label: Right Artwork
+        name: right
+        widget: relation
+        required: false
+        collection: artworks
+        search_fields:
+        - name
+        display_fields:
+        - name
+        value_field: '{{slug}}'
+        filters:
+        - field: category
+          values:
+          - installations
+    - label: Illustrations
+      name: illustrations
+      widget: object
+      fields:
+      - label: Left Artwork
+        name: left
+        widget: relation
+        required: false
+        collection: artworks
+        search_fields:
+        - name
+        display_fields:
+        - name
+        value_field: '{{slug}}'
+        filters:
+        - field: category
+          values:
+          - illustrations
+      - label: Right Artwork
+        name: right
+        widget: relation
+        required: false
+        collection: artworks
+        search_fields:
+        - name
+        display_fields:
+        - name
+        value_field: '{{slug}}'
+        filters:
+        - field: category
+          values:
+          - illustrations
+    - label: Videography
+      name: video
+      widget: object
+      fields:
+      - label: Left Artwork
+        name: left
+        widget: relation
+        required: false
+        collection: artworks
+        search_fields:
+        - name
+        display_fields:
+        - name
+        value_field: '{{slug}}'
+        filters:
+        - field: category
+          values:
+          - video
+      - label: Right Artwork
+        name: right
+        widget: relation
+        required: false
+        collection: artworks
+        search_fields:
+        - name
+        display_fields:
+        - name
+        value_field: '{{slug}}'
+        filters:
+        - field: category
+          values:
+          - video
 
-
-  
-  - name: "artist_statement"
-    label: "Artist Statement"
-    files:
-      - label: "Artist Statement & Exhibitions"
-        name: "bio"
-        file: "content/artist-statement.json"
-        format: "json"
-        fields:
-          - label: "Artist Statement"
-            name: "text"
-            widget: "text"
-          - label: "Exhibitions"
-            name: "exhibitions"
-            widget: "list"
-            fields:
-              - { label: "Year", name: "year", widget: "string" }
-              - { label: "Description", name: "description", widget: "string" }
-
-
-  - name: "homepage"
-    label: "Homepage"
-    files:
-      - label: "Homepage Artworks"
-        name: "homepage"
-        file: "content/homepage.json"
-        format: "json"
-        fields:
-          - label: "Paintings"
-            name: "paintings"
-            widget: "object"
-            fields:
-              - label: "Left Artwork"
-                name: "left"
-                widget: "relation"
-                required: false
-                collection: "artworks"
-                search_fields: ["name"]
-                display_fields: ["name"]
-                value_field: "{{slug}}"
-                filters:
-                  - field: "category"
-                    values: ["paintings"]
-              - label: "Right Artwork"
-                name: "right"
-                widget: "relation"
-                required: false
-                collection: "artworks"
-                search_fields: ["name"]
-                display_fields: ["name"]
-                value_field: "{{slug}}"
-                filters:
-                  - field: "category"
-                    values: ["paintings"]
-              
-          - label: "Digital"
-            name: "digital"
-            widget: "object"
-            fields:
-              - label: "Left Artwork"
-                name: "left"
-                widget: "relation"
-                required: false
-                collection: "artworks"
-                search_fields: ["name"]
-                display_fields: ["name"]
-                value_field: "{{slug}}"
-                filters:
-                  - field: "category"
-                    values: ["digital"]
-              - label: "Right Artwork"
-                name: "right"
-                widget: "relation"
-                required: false
-                collection: "artworks"
-                search_fields: ["name"]
-                display_fields: ["name"]
-                value_field: "{{slug}}"
-                filters:
-                  - field: "category"
-                    values: ["digital"]
-
-          - label: "Posters"
-            name: "posters"
-            widget: "object"
-            fields:
-              - label: "Left Artwork"
-                name: "left"
-                widget: "relation"
-                required: false
-                collection: "artworks"
-                search_fields: ["name"]
-                display_fields: ["name"]
-                value_field: "{{slug}}"
-                filters:
-                  - field: "category"
-                    values: ["posters"]
-              - label: "Right Artwork"
-                name: "right"
-                widget: "relation"
-                required: false
-                collection: "artworks"
-                search_fields: ["name"]
-                display_fields: ["name"]
-                value_field: "{{slug}}"
-                filters:
-                  - field: "category"
-                    values: ["posters"]
-
-          - label: "Sculptures"
-            name: "sculptures"
-            widget: "object"
-            fields:
-              - label: "Left Artwork"
-                name: "left"
-                widget: "relation"
-                required: false
-                collection: "artworks"
-                search_fields: ["name"]
-                display_fields: ["name"]
-                value_field: "{{slug}}"
-                filters:
-                  - field: "category"
-                    values: ["sculptures"]
-              - label: "Right Artwork"
-                name: "right"
-                widget: "relation"
-                required: false
-                collection: "artworks"
-                search_fields: ["name"]
-                display_fields: ["name"]
-                value_field: "{{slug}}"
-                filters:
-                  - field: "category"
-                    values: ["sculptures"]
-
-          - label: "Installations"
-            name: "installations"
-            widget: "object"
-            fields:
-              - label: "Left Artwork"
-                name: "left"
-                widget: "relation"
-                required: false
-                collection: "artworks"
-                search_fields: ["name"]
-                display_fields: ["name"]
-                value_field: "{{slug}}"
-                filters:
-                  - field: "category"
-                    values: ["installations"]
-              - label: "Right Artwork"
-                name: "right"
-                widget: "relation"
-                required: false
-                collection: "artworks"
-                search_fields: ["name"]
-                display_fields: ["name"]
-                value_field: "{{slug}}"
-                filters:
-                  - field: "category"
-                    values: ["installations"]
-
-          - label: "Illustrations"
-            name: "illustrations"
-            widget: "object"
-            fields:
-              - label: "Left Artwork"
-                name: "left"
-                widget: "relation"
-                required: false
-                collection: "artworks"
-                search_fields: ["name"]
-                display_fields: ["name"]
-                value_field: "{{slug}}"
-                filters:
-                  - field: "category"
-                    values: ["illustrations"]
-              - label: "Right Artwork"
-                name: "right"
-                widget: "relation"
-                required: false
-                collection: "artworks"
-                search_fields: ["name"]
-                display_fields: ["name"]
-                value_field: "{{slug}}"
-                filters:
-                  - field: "category"
-                    values: ["illustrations"]
-
-          - label: "Videography"
-            name: "video"
-            widget: "object"
-            fields:
-              - label: "Left Artwork"
-                name: "left"
-                widget: "relation"
-                required: false
-                collection: "artworks"
-                search_fields: ["name"]
-                display_fields: ["name"]
-                value_field: "{{slug}}"
-                filters:
-                  - field: "category"
-                    values: ["video"]
-              - label: "Right Artwork"
-                name: "right"
-                widget: "relation"
-                required: false
-                collection: "artworks"
-                search_fields: ["name"]
-                display_fields: ["name"]
-                value_field: "{{slug}}"
-                filters:
-                  - field: "category"
-                    values: ["video"]
